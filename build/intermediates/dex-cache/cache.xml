@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.5\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="75c54c470e19b251749e6e6c2cf3d73c0b50aa64">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-71c06b0a8fae316c20ad8d87a9c0436f157da1bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core-slh\3.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="49223278ec2ede1d05d00868c5ce3e077b4016f8">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-5df73d9ac639993c8332e376dd4c7206290465a9.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-f77435ca2661e0e182425eb2ab93cb8981efdfb7.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-manipulation\3.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5660e4bf78904137e90e62a5d4cc2e987258f02c">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-35f88c461ea7451646bd7984d38a37aae8561672.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\library-2.4.0-6be1de1a8b833d4474b7a21a1ded40bde0a1aa4d.jar" />
+    </item>
+    <item
+        jar="D:\studio\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-ae3c37b005386823fa6d5db0392161f79511c9e0.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.nhaarman.listviewanimations\lib-core\3.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="acf66033b1418ccf9e15c8e77750981e4809c4ea">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-168a3eb940544688a4030b71b459ac1316e6b275.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-74e8ed4dfb74784c83c5a47f37febb1072840b2f.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-af4ca96b8c7c81628f5f663922f53f3e4b804fdf.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\classes-a0da034d71cbf6feead823703a58e321d5e55ad9.jar" />
+    </item>
+    <item
+        jar="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\ferit.cafer\AndroidStudioProjects\FrequentContacts\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-2566f9823c4a3728215d5bf0b511b8d7065d73e0.jar" />
+    </item>
+
+</items>

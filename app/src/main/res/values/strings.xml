@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Frequent Contacts</string>
+    <string name="sharedPreferences">FREQUENT_CONTACTS_PREF</string>
+    <string name="contacts">/contacts.bin</string>
+
+    <!-- font families -->
+    <string name="fontFamilyRegular">sans-serif</string>
+    <string name="fontFamilyBlack">sans-serif-black</string>
+    <string name="fontFamilyBold">sans-serif-bold</string>
+    <string name="fontFamilyLight">sans-serif-light</string>
+    <string name="fontFamilyThin">sans-serif-thin</string>
+    <string name="fontFamilyCondensed">sans-serif-condensed</string>
+
+    <string name="addNew">Add New</string>
+
+    <string name="call">Call</string>
+    <string name="changePhoto">Change Photo</string>
+    <string name="deleteContact">Not Frequent</string>
+
+    <string name="wait">Please Wait</string>
+    <string name="ongoing">The process is ongoing</string>
+
+    <string name="maxContactsNumber">Max. 4 contacts can be added.</string>
+    <string name="ok">OK</string>
+
+    <string name="search">Search</string>
+
+    <string name="emptyText">ADD CONTACTS HERE, THEN USE THE WIDGET ON YOUR HOME SCREEN&#8230;</string>
+
+</resources>

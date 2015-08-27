@@ -1,0 +1,23 @@
+<resources>
+    <integer name="maxContactSize">4</integer>
+
+    <!-- text sizes -->
+    <dimen name="text_size_micro">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="divider_height">15dp</dimen>
+
+    <dimen name="NumberList_ItemHeight">48dp</dimen>
+    <dimen name="NumberList_TextSize">@dimen/text_size_medium</dimen>
+    <dimen name="NumberList_MarginHorizontal">10dp</dimen>
+
+    <dimen name="ContactList_ItemHeight">210dp</dimen>
+    <dimen name="ContactList_TextSize">18sp</dimen>
+    <dimen name="ContactList_ImageHeight">110dp</dimen>
+
+</resources>

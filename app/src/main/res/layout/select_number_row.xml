@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/NumberList_ItemHeight"
+    android:background="@drawable/list_item_selector">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/NumberList_MarginHorizontal"
+        android:textSize="@dimen/NumberList_TextSize"
+        android:textColor="@color/primary_text"
+        android:fontFamily="@string/fontFamilyCondensed"/>
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/NumberList_MarginHorizontal"
+        android:textSize="@dimen/NumberList_TextSize"
+        android:textColor="@color/secondary_text"
+        android:fontFamily="@string/fontFamilyCondensed"/>
+
+</RelativeLayout>
