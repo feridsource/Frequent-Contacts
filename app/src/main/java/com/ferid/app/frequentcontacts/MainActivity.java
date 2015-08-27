@@ -51,7 +51,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-
+/**
+ * Created by ferid.cafer on 11/10/2014.
+ */
 public class MainActivity extends AppCompatActivity implements ItemClickListener {
     private Context context;
 
