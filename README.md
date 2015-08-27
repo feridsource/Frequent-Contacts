@@ -1,6 +1,6 @@
 # Frequent Contacts
 
-This is an open source frequent contacts application and widget.
+This is an open source practical widget for frequent contacts.
 
 Copyright (C) 2015 Ferid Cafer
 
