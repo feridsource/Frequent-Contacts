@@ -9,35 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4d2c927-84d2-45a3-8356-9cad3797c71b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\lib_core_3_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\lib_core_slh_3_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\lib_manipulation_3_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\library_2_4_0.xml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\appcompat_v7_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_2_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\cardview_v7_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_22_2_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\design_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/design_22_2_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\support_annotations_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_2_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\.idea\libraries\support_v4_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ferid/app/frequentcontacts/list/Contact.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ferid/app/frequentcontacts/list/Contact.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ferid/app/frequentcontacts/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ferid/app/frequentcontacts/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/ferid/app/frequentcontacts/selectnumber/SelectNumberActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/ferid/app/frequentcontacts/selectnumber/SelectNumberActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/select_number.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/select_number.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d4d2c927-84d2-45a3-8356-9cad3797c71b" name="Default" comment="" />
     <ignored path="Frequent-Contacts.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
