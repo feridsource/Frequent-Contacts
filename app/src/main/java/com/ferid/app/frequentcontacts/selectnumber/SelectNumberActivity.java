@@ -18,9 +18,11 @@ package com.ferid.app.frequentcontacts.selectnumber;
 
 import android.app.SearchManager;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +30,7 @@ import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +39,6 @@ import android.widget.ListView;
 
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
-import com.nhaarman.listviewanimations.appearance.simple.AlphaInAnimationAdapter;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.text.Collator;
@@ -77,20 +79,16 @@ public class SelectNumberActivity extends AppCompatActivity {
         list = (ListView) findViewById(R.id.list);
         adapter = new NumberAdapter(context, R.layout.select_number_row, numberList);
 
-        //list item animations
-        AlphaInAnimationAdapter animatingAdapter
-                = new AlphaInAnimationAdapter(adapter);
-        animatingAdapter.setAbsListView(list);
-
-        assert animatingAdapter.getViewAnimator() != null;
-        animatingAdapter.getViewAnimator().setInitialDelayMillis(300);
-
-        list.setAdapter(animatingAdapter);
+        list.setAdapter(adapter);
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Contact contact = numberList.get(position);
+
+                //retrieve and set photo of the selected contact
+                contact.setPhoto(retrievePhoto(contact.getId()));
+
                 Intent intent = new Intent();
                 intent.putExtra("contact", contact);
                 setResult(RESULT_OK, intent);
@@ -118,7 +116,7 @@ public class SelectNumberActivity extends AppCompatActivity {
             if (cur.getCount() > 0) {
                 while (cur.moveToNext()) {
                     //names
-                    String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
+                    int id = cur.getInt(cur.getColumnIndex(ContactsContract.Contacts._ID));
                     final String name = cur.getString(
                             cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 
@@ -138,12 +136,15 @@ public class SelectNumberActivity extends AppCompatActivity {
                                     phones.getColumnIndex(
                                             ContactsContract.CommonDataKinds.Phone.NUMBER));
 
+                            //create a new Contact object
                             contact = new Contact();
+                            contact.setId(id);
                             contact.setName(name);
                             contact.setNumber(phoneNumber);
 
-                            if (!tmpList.contains(contact))
+                            if (!tmpList.contains(contact)) {
                                 tmpList.add(contact);
+                            }
                         }
                         phones.close();
                     }
@@ -159,6 +160,39 @@ public class SelectNumberActivity extends AppCompatActivity {
         return tmpList;
     }
 
+    /**
+     * Retrieve photo of the given contact with contact ID
+     * @param contactId
+     * @return
+     */
+    private String retrievePhoto(int contactId) {
+        Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI,
+                contactId);
+        Uri photoUri = Uri.withAppendedPath(contactUri,
+                ContactsContract.Contacts.Photo.CONTENT_DIRECTORY);
+
+        Cursor cursor = getContentResolver().query(photoUri,
+                new String[]{ContactsContract.Contacts.Photo.PHOTO}, null, null, null);
+
+        if (cursor == null) {
+            return "";
+        }
+
+        try {
+            if (cursor.moveToFirst()) {
+                byte[] data = cursor.getBlob(0);
+                if (data != null) {
+                    //byte[] to String convertion
+                    String photo = Base64.encodeToString(data, Base64.DEFAULT);
+                    return photo;
+                }
+            }
+        } finally {
+            cursor.close();
+        }
+
+        return "";
+    }
 
     /**
      * Read data and refresh the list
@@ -176,8 +210,9 @@ public class SelectNumberActivity extends AppCompatActivity {
             ArrayList<Contact> tmpList = getNumbersList();
 
             //sort elements
-            if (tmpList != null)
+            if (tmpList != null) {
                 Collections.sort(tmpList, new ContactsComparator());
+            }
 
             //send to UI thread
             return tmpList;

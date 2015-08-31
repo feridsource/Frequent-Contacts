@@ -13,11 +13,10 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
         android:background="@color/white"
-        android:cacheColorHint="@color/white"
-        android:dividerHeight="1dp"
-        android:divider="@color/gray"
-        android:gravity="center"
-        android:fastScrollEnabled="true"/>
+        android:dividerHeight="@dimen/listview_divider_height"
+        android:divider="@color/divider_colour"
+        android:fastScrollEnabled="true"
+        android:drawSelectorOnTop="true"/>
 
     <!-- Progress Bar -->
     <com.pnikosis.materialishprogress.ProgressWheel

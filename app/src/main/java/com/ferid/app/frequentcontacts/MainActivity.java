@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
     //photo
     private static int RESULT_LOAD_IMAGE = 1;
-    private final int MAX_IMAGE_HEIGHT = 260;
-    private final int MAX_IMAGE_WIDTH = 200;
+    private final int MAX_IMAGE_HEIGHT = 250;
+    private final int MAX_IMAGE_WIDTH = 250;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -229,6 +229,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RESULT_LOAD_IMAGE) {
+            //a photo picked from the gallery
             if (resultCode == RESULT_OK)	{
                 try {
                     Uri photoUri = data.getData();
@@ -300,6 +301,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                 }
             }
         } else if (requestCode == SELECT_NUMBER) {
+            //a contact selected from the list
             if (resultCode == RESULT_OK) {
                 try {
                     Contact contact = (Contact) data.getSerializableExtra("contact");

@@ -19,6 +19,6 @@
 
     <color name="primary_text">@color/blackish</color>
     <color name="secondary_text">@color/darkGray</color>
-    <color name="separator_colour">@color/gray</color>
+    <color name="divider_colour">@color/gray</color>
 
 </resources>

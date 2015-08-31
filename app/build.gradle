@@ -9,7 +9,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 22
-        versionName "3.0.2"
+        versionName "3.1.0"
     }
     buildTypes {
         release {
@@ -22,20 +22,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //support lib
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
 
     //design
-    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:design:22.2.1'
 
     //card view
-    compile 'com.android.support:cardview-v7:22.2.0'
+    compile 'com.android.support:cardview-v7:22.2.1'
 
     //material progress bar
     compile 'com.pnikosis:materialish-progress:1.5'
-
-    //list view animations
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.nhaarman.listviewanimations:lib-core:3.1.0@aar'
-    compile 'com.nhaarman.listviewanimations:lib-manipulation:3.1.0@aar'
-    compile 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
 }
