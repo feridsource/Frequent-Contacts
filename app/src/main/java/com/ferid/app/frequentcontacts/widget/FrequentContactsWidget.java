@@ -26,7 +26,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Base64;
-import android.view.View;
+import com.ferid.app.frequentcontacts.MainActivity;
 import android.widget.RemoteViews;
 
 import com.ferid.app.frequentcontacts.R;
@@ -85,33 +85,29 @@ public class FrequentContactsWidget extends AppWidgetProvider {
 
         for (int i = 0; i < context.getResources().getInteger(R.integer.maxContactSize); i++) {
             String componentId = "id/contact" + (i+1);
+
             if (i < contactsList.size()) {
-                //set photo
+                //if contact is set
                 try {
                     if (!contactsList.get(i).getPhoto().equals("")) {
-                        byte[] contactPhoto = Base64.decode(contactsList.get(i).getPhoto(), 0);
-                        Bitmap bitmap = BitmapFactory.decodeByteArray(contactPhoto, 0, contactPhoto.length);
-                        remoteViews.setImageViewBitmap(
-                                context.getResources().getIdentifier(
-                                        componentId, null, context.getPackageName()), bitmap);
+                        //set photo if exists
+                        setCustomPhoto(componentId, contactsList.get(i).getPhoto());
                     } else {
-                        remoteViews.setImageViewResource(
-                                context.getResources().getIdentifier(
-                                        componentId, null, context.getPackageName()), R.drawable.photo);
+                        //put default photo if there is no any
+                        setDefaultPhoto(componentId);
                     }
-                    remoteViews.setViewVisibility(context.getResources().getIdentifier(
-                            componentId, null, context.getPackageName()), View.VISIBLE);
 
-                    intent.setData(Uri.parse("tel:" + contactsList.get(i).getNumber()));
-                    pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-                    remoteViews.setOnClickPendingIntent(context.getResources().getIdentifier(
-                            componentId, null, context.getPackageName()), pendingIntent);
+                    //call contact on click
+                    setFrequentContactClickListener(componentId, contactsList.get(i).getNumber());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else {
-                remoteViews.setViewVisibility(context.getResources().getIdentifier(
-                        componentId, null, context.getPackageName()), View.GONE);
+                //put default photo for empty items
+                setDefaultPhoto(componentId);
+
+                //if contact is not set, open main activity
+                setEmptyItemClickListener(componentId);
             }
         }
 
@@ -119,5 +115,56 @@ public class FrequentContactsWidget extends AppWidgetProvider {
 
         appWidgetManager.updateAppWidget(thisWidget, remoteViews);
 
+    }
+
+    /**
+     * Put a default photo
+     * @param componentId String
+     */
+    private void setDefaultPhoto(String componentId) {
+        remoteViews.setImageViewResource(
+                context.getResources().getIdentifier(
+                        componentId, null,
+                        context.getPackageName()), R.drawable.photo);
+    }
+
+    /**
+     * Set its selected photo on the given contact
+     * @param componentId String
+     * @param photo String
+     */
+    private void setCustomPhoto(String componentId, String photo) {
+        byte[] contactPhoto = Base64.decode(photo, 0);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(contactPhoto,
+                0, contactPhoto.length);
+
+        remoteViews.setImageViewBitmap(
+                context.getResources().getIdentifier(
+                        componentId, null, context.getPackageName()), bitmap);
+    }
+
+    /**
+     * Set click listener for frequent contacts
+     * @param componentId String
+     * @param number String
+     */
+    private void setFrequentContactClickListener(String componentId, String number) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+
+        intent.setData(Uri.parse("tel:" + number));
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+        remoteViews.setOnClickPendingIntent(context.getResources().getIdentifier(
+                componentId, null, context.getPackageName()), pendingIntent);
+    }
+
+    /**
+     * Set click listener for empty items
+     * @param componentId String
+     */
+    private void setEmptyItemClickListener(String componentId) {
+        Intent intentMainActivity = new Intent(context, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intentMainActivity, 0);
+        remoteViews.setOnClickPendingIntent(context.getResources().getIdentifier(
+                componentId, null, context.getPackageName()), pendingIntent);
     }
 }

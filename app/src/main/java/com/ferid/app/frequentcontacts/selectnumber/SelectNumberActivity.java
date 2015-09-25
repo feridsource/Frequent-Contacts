@@ -98,6 +98,7 @@ public class SelectNumberActivity extends AppCompatActivity {
 
         progressWheel = (ProgressWheel) findViewById(R.id.progressWheel);
 
+
         new NumberListRetriever().execute();
     }
 
@@ -226,7 +227,7 @@ public class SelectNumberActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
 
-            progressWheel.stopSpinning();
+            if (progressWheel.isSpinning()) progressWheel.stopSpinning();
         }
     }
 
@@ -254,11 +255,13 @@ public class SelectNumberActivity extends AppCompatActivity {
             public void run() {
                 ArrayList<Contact> tmpList = new ArrayList<Contact>();
 
+                //first, add names that start with searchText
                 for (Contact location : wholeArrayList) {
                     if (location.getName().toLowerCase().startsWith(searchText.toLowerCase())) {
                         tmpList.add(location);
                     }
                 }
+                //then, add names that contain searchText
                 for (Contact location : wholeArrayList) {
                     if (location.getName().toLowerCase().contains(searchText.toLowerCase())
                             && !location.getName().toLowerCase().startsWith(searchText.toLowerCase())) {

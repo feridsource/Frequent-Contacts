@@ -26,6 +26,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         wheel:matProg_barColor="@color/colourPrimary"
-        wheel:matProg_progressIndeterminate="false" />
+        wheel:matProg_progressIndeterminate="true" />
 
 </RelativeLayout>
