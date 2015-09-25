@@ -26,9 +26,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Base64;
-import com.ferid.app.frequentcontacts.MainActivity;
 import android.widget.RemoteViews;
 
+import com.ferid.app.frequentcontacts.MainActivity;
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
 import com.ferid.app.frequentcontacts.prefs.PrefsUtil;
@@ -45,7 +45,8 @@ public class FrequentContactsWidget extends AppWidgetProvider {
     protected AppWidgetManager appWidgetManager;
     protected ComponentName thisWidget;
 
-    public static final String APP_TO_WID = "com.ferid.app.frequentcontacts.widget.APP_TO_WID"; //application triggers the widget
+    //application triggers the widget
+    public static final String APP_TO_WID = "com.ferid.app.frequentcontacts.widget.APP_TO_WID";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
