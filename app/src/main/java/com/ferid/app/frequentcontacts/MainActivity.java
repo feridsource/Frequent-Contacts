@@ -19,6 +19,7 @@ package com.ferid.app.frequentcontacts;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -29,6 +30,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
@@ -36,7 +38,6 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.ferid.app.frequentcontacts.custom_dialog.CustomDialog;
 import com.ferid.app.frequentcontacts.enums.Process;
 import com.ferid.app.frequentcontacts.interfaces.ItemClickListener;
 import com.ferid.app.frequentcontacts.list.Contact;
@@ -169,7 +170,17 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                 overridePendingTransition(R.anim.move_in_from_bottom, R.anim.stand_still);
             } else {
                 //alert
-                CustomDialog.showDialog(context);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage(context.getString(R.string.maxContactsNumber));
+                builder.setPositiveButton(context.getString(R.string.ok),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         }
     }
