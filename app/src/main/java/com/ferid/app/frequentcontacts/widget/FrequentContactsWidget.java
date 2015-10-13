@@ -26,9 +26,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Base64;
+import android.view.View;
 import android.widget.RemoteViews;
 
-import com.ferid.app.frequentcontacts.MainActivity;
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
 import com.ferid.app.frequentcontacts.prefs.PrefsUtil;
@@ -81,34 +81,33 @@ public class FrequentContactsWidget extends AppWidgetProvider {
     private void getContacts() {
         ArrayList<Contact> contactsList = PrefsUtil.getInstance(context).readContacts();
 
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        PendingIntent pendingIntent;
-
         for (int i = 0; i < context.getResources().getInteger(R.integer.maxContactSize); i++) {
             String componentId = "id/contact" + (i+1);
 
             if (i < contactsList.size()) {
+
+                Contact contact = contactsList.get(i);
                 //if contact is set
                 try {
-                    if (!contactsList.get(i).getPhoto().equals("")) {
+                    if (!contact.getPhoto().equals("")) {
                         //set photo if exists
-                        setCustomPhoto(componentId, contactsList.get(i).getPhoto());
+                        setCustomPhoto(componentId, contact.getPhoto());
                     } else {
                         //put default photo if there is no any
                         setDefaultPhoto(componentId);
                     }
 
+                    //show item
+                    setVisible(componentId);
+
                     //call contact on click
-                    setFrequentContactClickListener(componentId, contactsList.get(i).getNumber());
+                    setFrequentContactClickListener(componentId, contact.getNumber());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else {
-                //put default photo for empty items
-                setDefaultPhoto(componentId);
-
-                //if contact is not set, open main activity
-                setEmptyItemClickListener(componentId);
+                //hide item that is not needed to be shown
+                setHidden(componentId);
             }
         }
 
@@ -145,6 +144,28 @@ public class FrequentContactsWidget extends AppWidgetProvider {
     }
 
     /**
+     * Make item hidden
+     * @param componentId
+     */
+    private void setHidden(String componentId) {
+        remoteViews.setViewVisibility(
+                context.getResources().getIdentifier(
+                        componentId, null,
+                        context.getPackageName()), View.GONE);
+    }
+
+    /**
+     * Make item visible
+     * @param componentId
+     */
+    private void setVisible(String componentId) {
+        remoteViews.setViewVisibility(
+                context.getResources().getIdentifier(
+                        componentId, null,
+                        context.getPackageName()), View.VISIBLE);
+    }
+
+    /**
      * Set click listener for frequent contacts
      * @param componentId String
      * @param number String
@@ -154,17 +175,6 @@ public class FrequentContactsWidget extends AppWidgetProvider {
 
         intent.setData(Uri.parse("tel:" + number));
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-        remoteViews.setOnClickPendingIntent(context.getResources().getIdentifier(
-                componentId, null, context.getPackageName()), pendingIntent);
-    }
-
-    /**
-     * Set click listener for empty items
-     * @param componentId String
-     */
-    private void setEmptyItemClickListener(String componentId) {
-        Intent intentMainActivity = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intentMainActivity, 0);
         remoteViews.setOnClickPendingIntent(context.getResources().getIdentifier(
                 componentId, null, context.getPackageName()), pendingIntent);
     }
