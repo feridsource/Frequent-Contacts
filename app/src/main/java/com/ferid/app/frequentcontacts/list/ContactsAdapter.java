@@ -109,7 +109,7 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
         return convertView;
     }
 
-    public class ContactHolder {
+    private static class ContactHolder {
         ImageView photo;
         TextView name;
         TextView number;

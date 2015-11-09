@@ -70,7 +70,7 @@ public class NumberAdapter extends ArrayAdapter<Contact> {
         return convertView;
     }
 
-    public class ContactHolder {
+    private static class ContactHolder {
         TextView name;
         TextView number;
     }
