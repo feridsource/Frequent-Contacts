@@ -21,4 +21,6 @@
     <dimen name="ContactList_TextSize">18sp</dimen>
     <dimen name="ContactList_ImageHeight">110dp</dimen>
 
+    <dimen name="drop_shadow_height">8dp</dimen>
+
 </resources>

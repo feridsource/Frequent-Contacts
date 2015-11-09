@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Frequent Contacts</string>
+    <string name="app_name">Frequent Contacts Widget</string>
     <string name="sharedPreferences">FREQUENT_CONTACTS_PREF</string>
-    <string name="contacts">/contacts.bin</string>
+    <string name="pref_contacts">/contacts.bin</string>
 
     <!-- font families -->
     <string name="fontFamilyRegular">sans-serif</string>
@@ -12,6 +12,9 @@
     <string name="fontFamilyLight">sans-serif-light</string>
     <string name="fontFamilyThin">sans-serif-thin</string>
     <string name="fontFamilyCondensed">sans-serif-condensed</string>
+
+
+    <string name="contacts">Contacts</string>
 
     <string name="addNew">Add New</string>
 

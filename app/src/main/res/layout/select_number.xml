@@ -18,6 +18,13 @@
         android:fastScrollEnabled="true"
         android:drawSelectorOnTop="true"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_shadow_height"
+        android:layout_below="@+id/toolbar"
+        android:background="@drawable/drop_shadow"
+        android:alpha="0.5" />
+
     <!-- Progress Bar -->
     <com.pnikosis.materialishprogress.ProgressWheel
         android:id="@+id/progressWheel"

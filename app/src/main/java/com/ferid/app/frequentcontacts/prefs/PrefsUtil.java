@@ -18,6 +18,7 @@ package com.ferid.app.frequentcontacts.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Environment;
 
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
@@ -50,9 +51,19 @@ public class PrefsUtil {
         return instance;
     }
 
+    private static String getPathPrefix() {
+        String path = Environment.getExternalStorageDirectory() + "/frequent_contacts_widget/";
+        // create a File object for the parent directory
+        File directory = new File(path);
+        // have the object build the directory structure, if needed.
+        directory.mkdirs();
+
+        return path;
+    }
+
     public synchronized static void writeContacts(ArrayList<Contact> contactsList) {
         try {
-            String tempPath = context.getFilesDir() + context.getString(R.string.contacts);
+            String tempPath = getPathPrefix() + context.getString(R.string.pref_contacts);
             File file = new File(tempPath);
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
             oos.writeObject(contactsList);
@@ -66,7 +77,7 @@ public class PrefsUtil {
     public synchronized static ArrayList<Contact> readContacts() {
         ArrayList<Contact> tempList = new ArrayList<Contact>();
         try {
-            String tempPath = context.getFilesDir() + context.getString(R.string.contacts);
+            String tempPath = getPathPrefix() + context.getString(R.string.pref_contacts);
             File file = new File(tempPath);
             if (file.exists()) {
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));

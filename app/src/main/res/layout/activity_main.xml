@@ -27,13 +27,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:padding="@dimen/default_margin"
+        android:paddingTop="@dimen/default_margin"
         android:clipToPadding="false"
         android:cacheColorHint="@color/white"
         android:numColumns="2"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="@dimen/default_margin"
-        android:horizontalSpacing="@dimen/default_margin"/>
+        android:stretchMode="columnWidth"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/drop_shadow_height"
+        android:layout_below="@+id/toolbar"
+        android:background="@drawable/drop_shadow"
+        android:alpha="0.5" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/actionButtonAdd"
