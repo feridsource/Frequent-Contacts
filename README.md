@@ -1,4 +1,4 @@
-# Frequent Contacts
+# Frequent Contacts Widget
 
 This is an open source practical widget for frequent contacts.
 
