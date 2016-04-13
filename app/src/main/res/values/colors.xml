@@ -6,8 +6,6 @@
     <color name="white">#ffffff</color>
     <color name="gray">#b6b6b6</color>
     <color name="lightGray">#efefef</color>
-    <color name="smoothWhite">#FCF9F9</color>
-    <color name="transparent">#00000000</color>
 
     <!-- material colours -->
     <color name="materialIndigo">#3F51B5</color>
@@ -15,7 +13,6 @@
     <!-- theme -->
     <color name="colourPrimary">@color/materialIndigo</color>
     <color name="colourPrimaryDark">#303F9F</color>
-    <color name="colourPrimaryLight">#C5CAE9</color>
 
     <color name="primary_text">@color/blackish</color>
     <color name="secondary_text">@color/darkGray</color>

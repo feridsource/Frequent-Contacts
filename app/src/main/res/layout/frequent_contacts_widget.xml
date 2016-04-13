@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/photo" />
+        android:src="@drawable/photo"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/contact2"
@@ -19,7 +20,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/photo" />
+        android:src="@drawable/photo"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/contact3"
@@ -27,7 +29,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/photo" />
+        android:src="@drawable/photo"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/contact4"
@@ -35,6 +38,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:scaleType="centerCrop"
-        android:src="@drawable/photo"/>
+        android:src="@drawable/photo"
+        android:visibility="gone" />
 
 </LinearLayout>

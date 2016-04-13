@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Ferid Cafer
+ * Copyright (C) 2016 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ import java.util.ArrayList;
 public class FrequentContactsWidget extends AppWidgetProvider {
     private Context context;
 
-    protected RemoteViews remoteViews;
-    protected AppWidgetManager appWidgetManager;
-    protected ComponentName thisWidget;
+    private RemoteViews remoteViews;
+    private AppWidgetManager appWidgetManager;
+    private ComponentName thisWidget;
 
     //application triggers the widget
     public static final String APP_TO_WID = "com.ferid.app.frequentcontacts.widget.APP_TO_WID";
@@ -81,33 +81,27 @@ public class FrequentContactsWidget extends AppWidgetProvider {
     private void getContacts() {
         ArrayList<Contact> contactsList = PrefsUtil.getInstance(context).readContacts();
 
-        for (int i = 0; i < context.getResources().getInteger(R.integer.maxContactSize); i++) {
+        for (int i = 0; i < contactsList.size(); i++) {
             String componentId = "id/contact" + (i+1);
 
-            if (i < contactsList.size()) {
-
-                Contact contact = contactsList.get(i);
-                //if contact is set
-                try {
-                    if (!contact.getPhoto().equals("")) {
-                        //set photo if exists
-                        setCustomPhoto(componentId, contact.getPhoto());
-                    } else {
-                        //put default photo if there is no any
-                        setDefaultPhoto(componentId);
-                    }
-
-                    //show item
-                    setVisible(componentId);
-
-                    //call contact on click
-                    setFrequentContactClickListener(componentId, contact.getNumber());
-                } catch (Exception e) {
-                    e.printStackTrace();
+            Contact contact = contactsList.get(i);
+            //if contact is set
+            try {
+                if (!contact.getPhoto().equals("")) {
+                    //set photo if exists
+                    setCustomPhoto(componentId, contact.getPhoto());
+                } else {
+                    //put default photo if there is no any
+                    setDefaultPhoto(componentId);
                 }
-            } else {
-                //hide item that is not needed to be shown
-                setHidden(componentId);
+
+                //show item
+                setVisible(componentId);
+
+                //call contact on click
+                setFrequentContactClickListener(componentId, contact.getNumber());
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
@@ -141,17 +135,6 @@ public class FrequentContactsWidget extends AppWidgetProvider {
         remoteViews.setImageViewBitmap(
                 context.getResources().getIdentifier(
                         componentId, null, context.getPackageName()), bitmap);
-    }
-
-    /**
-     * Make item hidden
-     * @param componentId
-     */
-    private void setHidden(String componentId) {
-        remoteViews.setViewVisibility(
-                context.getResources().getIdentifier(
-                        componentId, null,
-                        context.getPackageName()), View.GONE);
     }
 
     /**

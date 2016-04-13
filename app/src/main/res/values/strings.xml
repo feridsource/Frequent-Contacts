@@ -2,28 +2,18 @@
 <resources>
 
     <string name="app_name">Frequent Contacts Widget</string>
-    <string name="sharedPreferences">FREQUENT_CONTACTS_PREF</string>
-    <string name="pref_contacts">/contacts.bin</string>
+    <string name="pref_contacts">contacts.bin</string>
 
     <!-- font families -->
-    <string name="fontFamilyRegular">sans-serif</string>
-    <string name="fontFamilyBlack">sans-serif-black</string>
     <string name="fontFamilyBold">sans-serif-bold</string>
     <string name="fontFamilyLight">sans-serif-light</string>
-    <string name="fontFamilyThin">sans-serif-thin</string>
     <string name="fontFamilyCondensed">sans-serif-condensed</string>
 
 
     <string name="contacts">Contacts</string>
 
-    <string name="addNew">Add New</string>
-
-    <string name="call">Call</string>
     <string name="changePhoto">Change Photo</string>
     <string name="deleteContact">Not Frequent</string>
-
-    <string name="wait">Please Wait</string>
-    <string name="ongoing">The process is ongoing</string>
 
     <string name="maxContactsNumber">Max. 4 contacts can be added.</string>
     <string name="ok">OK</string>

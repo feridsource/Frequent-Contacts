@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Ferid Cafer
+ * Copyright (C) 2016 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -59,19 +60,15 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private Context context;
 
     private GridView list;
-    private ArrayList<Contact> contactsList = new ArrayList<Contact>();
+    private ArrayList<Contact> contactsList = new ArrayList<>();
     private ContactsAdapter adapter;
 
     private Contact contact = new Contact();
 
     private final int SELECT_NUMBER = 0;
 
-    private FloatingActionButton actionButtonAdd;
-
     //photo
     private static int RESULT_LOAD_IMAGE = 1;
-    private final int MAX_IMAGE_HEIGHT = 250;
-    private final int MAX_IMAGE_WIDTH = 250;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +82,12 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         list = (GridView) findViewById(R.id.list);
         adapter = new ContactsAdapter(context, R.layout.contacts_row, contactsList);
-
         list.setAdapter(adapter);
 
         TextView emptyText = (TextView) findViewById(R.id.emptyText);
         list.setEmptyView(emptyText);
 
-        actionButtonAdd = (FloatingActionButton) findViewById(R.id.actionButtonAdd);
+        FloatingActionButton actionButtonAdd = (FloatingActionButton) findViewById(R.id.actionButtonAdd);
         actionButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +95,25 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             }
         });
 
+        setListItemClickListener();
+
         new ContactsRetriever().execute();
+    }
+
+    /**
+     * Set list view item click listener
+     */
+    private void setListItemClickListener() {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (contactsList != null && contactsList.size() > position) {
+                    contact = contactsList.get(position);
+
+                    callContact();
+                }
+            }
+        });
     }
 
     /**
@@ -116,8 +130,6 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                 selectPhoto();
             } else if (menuItemPosition == Process.DELETE_CONTACT.getValue()) {
                 removeCurrentContact();
-            } else if (menuItemPosition == Process.CALL.getValue()) {
-                callContact();
             }
         }
     }
@@ -194,6 +206,9 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         save_refresh();
     }
 
+    /**
+     * Call the selected contact
+     */
     private void callContact() {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:" + contact.getNumber()));
@@ -205,7 +220,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
      */
     private void updateFrequentContactsWidget() {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-        ComponentName thisAppWidget = new ComponentName(context.getPackageName(), this.getClass().getName());
+        ComponentName thisAppWidget = new ComponentName(context.getPackageName(),
+                this.getClass().getName());
         Intent updateWidget = new Intent(context, FrequentContactsWidget.class);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget);
         updateWidget.setAction(FrequentContactsWidget.APP_TO_WID);
@@ -220,16 +236,24 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
      * @return
      */
     private static int getOrientation(Context context, Uri photoUri) {
+        int orientation = -1;
+
 	    /* it's on the external media. */
         Cursor cursor = context.getContentResolver().query(photoUri,
                 new String[] { MediaStore.Images.ImageColumns.ORIENTATION }, null, null, null);
 
-        if (cursor.getCount() != 1) {
-            return -1;
+        if (cursor != null) {
+            if (cursor.getCount() != 1) {
+                return orientation;
+            }
+
+            cursor.moveToFirst();
+
+            orientation = cursor.getInt(0);
+            cursor.close();
         }
 
-        cursor.moveToFirst();
-        return cursor.getInt(0);
+        return orientation;
     }
 
     /**
@@ -249,7 +273,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                     BitmapFactory.Options dbo = new BitmapFactory.Options();
                     dbo.inJustDecodeBounds = true;
                     BitmapFactory.decodeStream(is, null, dbo);
-                    is.close();
+                    if (is != null) is.close();
 
                     int rotatedWidth, rotatedHeight;
                     int orientation = getOrientation(this, photoUri);
@@ -264,6 +288,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
                     Bitmap srcBitmap;
                     is = this.getContentResolver().openInputStream(photoUri);
+                    int MAX_IMAGE_HEIGHT = 250;
+                    int MAX_IMAGE_WIDTH = 250;
                     if (rotatedWidth > MAX_IMAGE_WIDTH || rotatedHeight > MAX_IMAGE_HEIGHT) {
                         float widthRatio = ((float) rotatedWidth) / ((float) MAX_IMAGE_WIDTH);
                         float heightRatio = ((float) rotatedHeight) / ((float) MAX_IMAGE_HEIGHT);
@@ -276,7 +302,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                     } else {
                         srcBitmap = BitmapFactory.decodeStream(is);
                     }
-                    is.close();
+                    if (is != null) is.close();
 
                     //if the orientation is not 0 (or -1, which means we don't know), we have to do a rotation.
                     if (orientation > 0) {

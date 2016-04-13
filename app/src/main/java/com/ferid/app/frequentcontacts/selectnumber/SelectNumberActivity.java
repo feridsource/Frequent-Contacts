@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Ferid Cafer
+ * Copyright (C) 2016 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,24 +51,18 @@ import java.util.Locale;
  * Created by ferid.cafer on 11/12/2014.
  */
 public class SelectNumberActivity extends AppCompatActivity {
-    private Context context;
 
-    private ListView list;
-    private ArrayList<Contact> numberList = new ArrayList<Contact>();
+    private ArrayList<Contact> numberList = new ArrayList<>();
     private NumberAdapter adapter;
 
     private ProgressWheel progressWheel;
 
-    //searching elements
-    private SearchView searchView;
-    private ArrayList<Contact> wholeArrayList = new ArrayList<Contact>();
+    private ArrayList<Contact> wholeArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_number);
-
-        context = this;
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -76,8 +70,8 @@ public class SelectNumberActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        list = (ListView) findViewById(R.id.list);
-        adapter = new NumberAdapter(context, R.layout.select_number_row, numberList);
+        ListView list = (ListView) findViewById(R.id.list);
+        adapter = new NumberAdapter(this, R.layout.select_number_row, numberList);
 
         list.setAdapter(adapter);
 
@@ -113,49 +107,52 @@ public class SelectNumberActivity extends AppCompatActivity {
         ContentResolver cr = getContentResolver();
         Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
 
-        try {
-            if (cur.getCount() > 0) {
-                while (cur.moveToNext()) {
-                    //names
-                    int id = cur.getInt(cur.getColumnIndex(ContactsContract.Contacts._ID));
-                    final String name = cur.getString(
-                            cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+        if (cur != null) {
+            try {
+                if (cur.getCount() > 0) {
+                    while (cur.moveToNext()) {
+                        //names
+                        int id = cur.getInt(cur.getColumnIndex(ContactsContract.Contacts._ID));
+                        final String name = cur.getString(
+                                cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 
-                    if (Integer.parseInt(
-                            cur.getString(cur.getColumnIndex(
-                                    ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
-                        //phones
-                        Cursor phones = getContentResolver().query(
-                                ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                                new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER,
-                                        ContactsContract.CommonDataKinds.Phone.TYPE},
-                                ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
-                                null, null);
+                        if (Integer.parseInt(
+                                cur.getString(cur.getColumnIndex(
+                                        ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+                            //phones
+                            Cursor phones = getContentResolver().query(
+                                    ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                                    new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER,
+                                            ContactsContract.CommonDataKinds.Phone.TYPE},
+                                    ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
+                                    null, null);
 
-                        while (phones.moveToNext()) {
-                            String phoneNumber = phones.getString(
-                                    phones.getColumnIndex(
-                                            ContactsContract.CommonDataKinds.Phone.NUMBER));
+                            if (phones != null) {
+                                while (phones.moveToNext()) {
+                                    String phoneNumber = phones.getString(
+                                            phones.getColumnIndex(
+                                                    ContactsContract.CommonDataKinds.Phone.NUMBER));
 
-                            //create a new Contact object
-                            contact = new Contact();
-                            contact.setId(id);
-                            contact.setName(name);
-                            contact.setNumber(phoneNumber);
+                                    //create a new Contact object
+                                    contact = new Contact();
+                                    contact.setId(id);
+                                    contact.setName(name);
+                                    contact.setNumber(phoneNumber);
 
-                            if (!tmpList.contains(contact)) {
-                                tmpList.add(contact);
+                                    if (!tmpList.contains(contact)) {
+                                        tmpList.add(contact);
+                                    }
+                                }
+                                phones.close();
                             }
                         }
-                        phones.close();
                     }
                 }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (cur != null)
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
                 cur.close();
+            }
         }
 
         return tmpList;
@@ -291,7 +288,7 @@ public class SelectNumberActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_search, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.ic_action_search).getActionView();
+        SearchView searchView = (SearchView) menu.findItem(R.id.ic_action_search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

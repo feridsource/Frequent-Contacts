@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Ferid Cafer
+ * Copyright (C) 2016 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 package com.ferid.app.frequentcontacts.prefs;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Environment;
 
 import com.ferid.app.frequentcontacts.R;
@@ -35,7 +34,6 @@ import java.util.ArrayList;
  */
 public class PrefsUtil {
     private static volatile PrefsUtil instance = null;
-    private static SharedPreferences prefs;
     private static Context context;
 
     public static PrefsUtil getInstance(Context context__) {
@@ -44,7 +42,6 @@ public class PrefsUtil {
                 if (instance == null) {
                     instance = new PrefsUtil();
                     context = context__;
-                    prefs = context.getSharedPreferences(context.getString(R.string.sharedPreferences), 0);
                 }
             }
         }
@@ -90,4 +87,5 @@ public class PrefsUtil {
 
         return tempList;
     }
+
 }

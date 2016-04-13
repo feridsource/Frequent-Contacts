@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Ferid Cafer
+ * Copyright (C) 2016 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,12 @@ package com.ferid.app.frequentcontacts.enums;
  * Created by ferid.cafer on 11/12/2014.
  */
 public enum Process {
-    CALL(0),
-    CHANGE_PHOTO(1),
-    DELETE_CONTACT(2);
+    CHANGE_PHOTO(0),
+    DELETE_CONTACT(1);
 
     private final int value;
 
-    private Process(int value) {
+    Process(int value) {
         this.value = value;
     }
     public int getValue() {
