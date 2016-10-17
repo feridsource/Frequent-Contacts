@@ -35,6 +35,7 @@ import com.ferid.app.frequentcontacts.prefs.PrefsUtil;
 
 import java.util.ArrayList;
 
+
 /**
  * Created by ferid.cafer on 11/10/2014.
  */
@@ -79,7 +80,7 @@ public class FrequentContactsWidget extends AppWidgetProvider {
      * Read frequently used contacts list
      */
     private void getContacts() {
-        ArrayList<Contact> contactsList = PrefsUtil.getInstance(context).readContacts();
+        ArrayList<Contact> contactsList = PrefsUtil.readContacts(context);
 
         for (int i = 0; i < contactsList.size(); i++) {
             String componentId = "id/contact" + (i+1);

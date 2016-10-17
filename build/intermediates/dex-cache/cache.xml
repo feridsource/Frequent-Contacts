@@ -2,53 +2,85 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.7\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\com.pnikosis-materialish-progress-1.7_1c8e740accd09e60bb7a6c080d59dd98c10b4b64.jar" />
-    </item>
-    <item
-        jar="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1_f836fb409cdd98397f4828bcd4866cb89d89e833.jar" />
-    </item>
-    <item
-        jar="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.2.1_397161ae1e08eb4a6b831b9df27e5d8a5cd53aaf.jar" />
-    </item>
-    <item
-        jar="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_fe54f180b43b4af8f9438a0709464acdd166bf0d.jar" />
-    </item>
-    <item
-        jar="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-22.2.1_3ab244a3860c1b8223b7f4671112ebfdd0a1b908.jar" />
-    </item>
-    <item
-        jar="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
         revision="22.0.1"
         sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\com.android.support-design-22.2.1_ff6c0a3ecb6440648cc2328dc56d990e3c5be233.jar" />
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.1_0875280bb438c5415511a4b3c77206770d8eee54\classes.dex" />
     </item>
     <item
-        jar="C:\Users\vito\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.7\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.pnikosis-materialish-progress-1.7_8e8e5d780b6ea30e751c522c694847bc5bac8be0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.1_2195d9ac6b769c07f5adcd3a0c4f244c80c10ff4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="823ea0eac9cce53483458159c24a08b94e7a549a">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3c0dd4c9410734e525648751b93e07202789731b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.2.1_86a8c69aa9adc1ada257e9f68e026922e1c035bf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="true"
+        optimize="true"
         revision="22.0.1"
         sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\vito\AndroidStudioProjects\Frequent-Contacts\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1_47f15530be0c1f41c4f2ac1dcbe2fe6579cebf37.jar" />
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.2.1_24ad6897682ddc6ec0e2ec5acff53847b28a970d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.1_b2a70ebf3d4dbaff464031b3033ef7391eaa29dc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="1eaf995f6aa782d884732c19937ab2051a38b292">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c106be552e75a177934faf507750caa99f4f89e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-22.2.1_fbbb11ed181a57f9e886e6f73377e3f6af5a84b2\classes.dex" />
     </item>
 
 </items>

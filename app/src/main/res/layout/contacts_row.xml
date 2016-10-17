@@ -40,7 +40,7 @@
                 android:textSize="@dimen/NumberList_TextSize"
                 android:textColor="@color/primary_text"
                 android:fontFamily="@string/fontFamilyBold"
-                android:singleLine="true"
+                android:maxLines="1"
                 android:ellipsize="end"/>
 
             <TextView
@@ -54,7 +54,7 @@
                 android:textSize="@dimen/NumberList_TextSize"
                 android:textColor="@color/secondary_text"
                 android:fontFamily="@string/fontFamilyLight"
-                android:singleLine="true"
+                android:maxLines="1"
                 android:ellipsize="end"/>
 
         </LinearLayout>

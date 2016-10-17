@@ -53,6 +53,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+
 /**
  * Created by ferid.cafer on 11/10/2014.
  */
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         @Override
         protected ArrayList<Contact> doInBackground(Void... params) {
-            return PrefsUtil.getInstance(context).readContacts();
+            return PrefsUtil.readContacts(context);
         }
 
         @Override
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
      * Save data and refresh the list
      */
     private void save_refresh() {
-        PrefsUtil.getInstance(context).writeContacts(contactsList);
+        PrefsUtil.writeContacts(context, contactsList);
         adapter.notifyDataSetChanged();
 
         updateFrequentContactsWidget();

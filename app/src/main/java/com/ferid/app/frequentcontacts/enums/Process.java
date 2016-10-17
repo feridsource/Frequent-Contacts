@@ -16,6 +16,7 @@
 
 package com.ferid.app.frequentcontacts.enums;
 
+
 /**
  * Created by ferid.cafer on 11/12/2014.
  */

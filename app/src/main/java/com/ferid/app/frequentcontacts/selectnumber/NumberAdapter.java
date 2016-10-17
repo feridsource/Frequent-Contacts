@@ -29,6 +29,7 @@ import com.ferid.app.frequentcontacts.list.Contact;
 
 import java.util.ArrayList;
 
+
 /**
  * Created by ferid.cafer on 11/12/2014.
  */

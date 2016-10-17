@@ -29,24 +29,11 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+
 /**
  * Created by ferid.cafer on 11/10/2014.
  */
 public class PrefsUtil {
-    private static volatile PrefsUtil instance = null;
-    private static Context context;
-
-    public static PrefsUtil getInstance(Context context__) {
-        if (instance == null) {
-            synchronized (PrefsUtil.class){
-                if (instance == null) {
-                    instance = new PrefsUtil();
-                    context = context__;
-                }
-            }
-        }
-        return instance;
-    }
 
     private static String getPathPrefix() {
         String path = Environment.getExternalStorageDirectory() + "/frequent_contacts_widget/";
@@ -58,7 +45,7 @@ public class PrefsUtil {
         return path;
     }
 
-    public synchronized static void writeContacts(ArrayList<Contact> contactsList) {
+    public synchronized static void writeContacts(Context context, ArrayList<Contact> contactsList) {
         try {
             String tempPath = getPathPrefix() + context.getString(R.string.pref_contacts);
             File file = new File(tempPath);
@@ -71,8 +58,8 @@ public class PrefsUtil {
         }
     }
 
-    public synchronized static ArrayList<Contact> readContacts() {
-        ArrayList<Contact> tempList = new ArrayList<Contact>();
+    public synchronized static ArrayList<Contact> readContacts(Context context) {
+        ArrayList<Contact> tempList = new ArrayList<>();
         try {
             String tempPath = getPathPrefix() + context.getString(R.string.pref_contacts);
             File file = new File(tempPath);
