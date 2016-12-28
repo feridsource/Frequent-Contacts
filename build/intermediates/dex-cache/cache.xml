@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="13fa398bec5aeb5186e2bb59021e74084ec9f2c5">
+        sha1="5d8155cfce0bb96fc4d7d36d54d00bb42f3fda9e">
         <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c106be552e75a177934faf507750caa99f4f89e\classes.dex" />
     </item>
     <item
@@ -142,7 +142,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="5b31d8a1306b09a55eef80e0adc45e28c2c1d7af">
+        sha1="5621f9ad5f8b40a04361a598092f85d265dc8cca">
         <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3c0dd4c9410734e525648751b93e07202789731b\classes.dex" />
     </item>
 
