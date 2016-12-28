@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="247e9bc5144170ee1133f23a3e3e6f04b4bf570f">
+        sha1="13fa398bec5aeb5186e2bb59021e74084ec9f2c5">
         <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c106be552e75a177934faf507750caa99f4f89e\classes.dex" />
     </item>
     <item
@@ -120,15 +120,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.7\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.pnikosis-materialish-progress-1.7_8e8e5d780b6ea30e751c522c694847bc5bac8be0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -151,7 +142,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="2d511c53d1bbabe9b53ae5f856e03461995b2282">
+        sha1="5b31d8a1306b09a55eef80e0adc45e28c2c1d7af">
         <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3c0dd4c9410734e525648751b93e07202789731b\classes.dex" />
     </item>
 
