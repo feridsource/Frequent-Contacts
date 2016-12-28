@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="@dimen/ContactList_ItemHeight"
@@ -29,7 +30,7 @@
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:src="@drawable/photo"
-                android:background="@color/darkGray"/>
+                android:background="@color/darkGrey"/>
 
             <TextView
                 android:id="@+id/name"
@@ -64,9 +65,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|top"
-            android:src="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+            app:srcCompat="@drawable/ic_action_more"
             android:tint="@color/white"
-            style="@style/Widget.AppCompat.ActionButton"/>
+            style="@style/Widget.AppCompat.ActionButton" />
 
     </android.support.v7.widget.CardView>
 

@@ -16,11 +16,13 @@
 
 package com.ferid.app.frequentcontacts;
 
+import android.Manifest;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,8 +30,12 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -64,12 +70,18 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private ArrayList<Contact> contactsList = new ArrayList<>();
     private ContactsAdapter adapter;
 
+    private FloatingActionButton actionButtonAdd;
+
     private Contact contact = new Contact();
 
     private final int SELECT_NUMBER = 0;
 
     //photo
     private static int RESULT_LOAD_IMAGE = 1;
+
+    //permissions
+    private static int REQUEST_PERMISSIONS = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         TextView emptyText = (TextView) findViewById(R.id.emptyText);
         list.setEmptyView(emptyText);
 
-        FloatingActionButton actionButtonAdd = (FloatingActionButton) findViewById(R.id.actionButtonAdd);
+        actionButtonAdd = (FloatingActionButton) findViewById(R.id.actionButtonAdd);
         actionButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         setListItemClickListener();
 
-        new ContactsRetriever().execute();
+        askForPermissions();
     }
 
     /**
@@ -147,7 +159,12 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         @Override
         protected void onPostExecute(ArrayList<Contact> result) {
-            contactsList.addAll(result);
+            if (result != null) {
+                contactsList.addAll(result);
+            } else {
+                contactsList.clear();
+            }
+
             adapter.notifyDataSetChanged();
         }
     }
@@ -255,6 +272,84 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         }
 
         return orientation;
+    }
+
+    /**
+     * Get contacts list and show add button after permissions granted
+     */
+    private void initAfterPermissions() {
+        new ContactsRetriever().execute();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                actionButtonAdd.show();
+            }
+        }, 400);
+    }
+
+    /**
+     * Ask for reading contacts and phone calling permissions
+     */
+    private void askForPermissions() {
+        if ((ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED)
+                || (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED)) { //permissions yet to be granted
+
+            getPermissios();
+        } else { //permissions already granted
+            initAfterPermissions();
+        }
+    }
+
+    /**
+     * Request and get the permission for reading contacts phone calling
+     */
+    private void getPermissios() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.READ_CONTACTS)
+                || ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.CALL_PHONE)) {
+
+            Snackbar.make(actionButtonAdd, R.string.grantPermission,
+                    Snackbar.LENGTH_LONG)
+                    .setAction(R.string.ok, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            ActivityCompat.requestPermissions(MainActivity.this,
+                                    new String[]{Manifest.permission.READ_CONTACTS,
+                                            Manifest.permission.CALL_PHONE},
+                                    REQUEST_PERMISSIONS);
+                        }
+                    }).show();
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_CONTACTS,
+                            Manifest.permission.CALL_PHONE},
+                    REQUEST_PERMISSIONS);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+
+        if (requestCode == REQUEST_PERMISSIONS) {
+            //if request is cancelled, the result arrays are empty.
+            if (grantResults.length > 1
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED
+                    && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+
+                //permission granted
+                initAfterPermissions();
+            } else {
+                //permission denied
+                finish();
+            }
+        }
     }
 
     /**

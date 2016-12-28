@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightGray"
+    android:background="@color/lightGrey"
     tools:context=".MainActivity">
 
     <include
+        android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
     <TextView
@@ -17,7 +18,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/default_margin"
         android:gravity="center"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/secondary_text"
         android:textSize="@dimen/text_size_large"
         android:fontFamily="@string/fontFamilyLight"
         android:text="@string/emptyText"/>
@@ -47,8 +48,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_action_add"
+        app:srcCompat="@drawable/ic_action_add"
         app:elevation="4dp"
-        app:borderWidth="0dp"/>
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        android:visibility="gone"/>
 
 </RelativeLayout>

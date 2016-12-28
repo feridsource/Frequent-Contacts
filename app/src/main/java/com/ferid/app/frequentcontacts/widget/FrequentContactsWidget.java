@@ -29,6 +29,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.RemoteViews;
 
+import com.ferid.app.frequentcontacts.MainActivity;
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
 import com.ferid.app.frequentcontacts.prefs.PrefsUtil;
@@ -48,6 +49,7 @@ public class FrequentContactsWidget extends AppWidgetProvider {
 
     //application triggers the widget
     public static final String APP_TO_WID = "com.ferid.app.frequentcontacts.widget.APP_TO_WID";
+    public static final String WIDGET_ENABLED = "android.appwidget.action.APPWIDGET_ENABLED";
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -68,7 +70,8 @@ public class FrequentContactsWidget extends AppWidgetProvider {
         remoteViews = new RemoteViews(context.getPackageName(), R.layout.frequent_contacts_widget);
         thisWidget = new ComponentName(context, FrequentContactsWidget.class);
 
-        if (intent.getAction().equals(APP_TO_WID)) {
+        if (intent.getAction().equals(APP_TO_WID)
+                || intent.getAction().equals(WIDGET_ENABLED)) {
             if (remoteViews != null) {
                 getContacts();
             }
@@ -82,31 +85,45 @@ public class FrequentContactsWidget extends AppWidgetProvider {
     private void getContacts() {
         ArrayList<Contact> contactsList = PrefsUtil.readContacts(context);
 
-        for (int i = 0; i < contactsList.size(); i++) {
-            String componentId = "id/contact" + (i+1);
+        if (contactsList == null || contactsList.size() == 0) {
+            remoteViews.setBoolean(R.id.layoutBackground, "setEnabled", false);
 
-            Contact contact = contactsList.get(i);
-            //if contact is set
-            try {
-                if (!contact.getPhoto().equals("")) {
-                    //set photo if exists
-                    setCustomPhoto(componentId, contact.getPhoto());
+            Intent intent = new Intent(context, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
+        } else {
+            for (int i = 0; i < context.getResources().getInteger(R.integer.maxContactSize); i++) {
+                final String componentId = "id/contact" + (i + 1);
+
+                if (contactsList.size() > i) {
+                    Contact contact = contactsList.get(i);
+                    //if contact is set
+                    try {
+                        if (!contact.getPhoto().equals("")) {
+                            //set photo if exists
+                            setCustomPhoto(componentId, contact.getPhoto());
+                        } else {
+                            //put default photo if there is no any
+                            setDefaultPhoto(componentId);
+                        }
+
+                        //show item
+                        setVisible(componentId);
+
+                        //call contact on click
+                        setFrequentContactClickListener(componentId, contact.getNumber());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 } else {
-                    //put default photo if there is no any
-                    setDefaultPhoto(componentId);
+                    //make it invisible (gone)
+                    setInvisible(componentId);
                 }
-
-                //show item
-                setVisible(componentId);
-
-                //call contact on click
-                setFrequentContactClickListener(componentId, contact.getNumber());
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+
+            remoteViews.setBoolean(R.id.layoutBackground, "setEnabled", true);
         }
 
-        remoteViews.setBoolean(R.id.layoutBackground, "setEnabled", true);
 
         appWidgetManager.updateAppWidget(thisWidget, remoteViews);
 
@@ -147,6 +164,17 @@ public class FrequentContactsWidget extends AppWidgetProvider {
                 context.getResources().getIdentifier(
                         componentId, null,
                         context.getPackageName()), View.VISIBLE);
+    }
+
+    /**
+     * Make item invisible
+     * @param componentId
+     */
+    private void setInvisible(String componentId) {
+        remoteViews.setViewVisibility(
+                context.getResources().getIdentifier(
+                        componentId, null,
+                        context.getPackageName()), View.GONE);
     }
 
     /**

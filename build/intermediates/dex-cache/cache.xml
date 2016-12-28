@@ -3,84 +3,156 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.1_0875280bb438c5415511a4b3c77206770d8eee54\classes.dex" />
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_d7d5b5a534c044ceb9729b4090d13680feb481cb\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.7\jars\classes.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.pnikosis-materialish-progress-1.7_8e8e5d780b6ea30e751c522c694847bc5bac8be0\classes.dex" />
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.0_553627e82c70c385da35c0e4393bac4598f5a64f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.1_2195d9ac6b769c07f5adcd3a0c4f244c80c10ff4\classes.dex" />
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.0_e90c39a1fefd3e527ba30f70314cacf2781e6b82\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="823ea0eac9cce53483458159c24a08b94e7a549a">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3c0dd4c9410734e525648751b93e07202789731b\classes.dex" />
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.0_ce49bae8c669b438bf42145638f12d0d38e12a9d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.2.1_86a8c69aa9adc1ada257e9f68e026922e1c035bf\classes.dex" />
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.0_9a5f7f5cce8206aa1cc549b42f26cf78400f36d4\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.2.1_24ad6897682ddc6ec0e2ec5acff53847b28a970d\classes.dex" />
+        revision="25.0.2"
+        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.1.0_5d25e0a04acbd967087cb4dd1baebc1cd0ed760d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.1_b2a70ebf3d4dbaff464031b3033ef7391eaa29dc\classes.dex" />
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.0_74908c08586c356665d8c50b6ff2ee512d5e8573\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.0_de8fb1391c4ee6b10219b91052a7557420168c5d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\design\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.0_b1c14cada88f90ff95fd840c36d5b70624dd308e\classes.dex" />
     </item>
     <item
         is-multidex="true"
         jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="1eaf995f6aa782d884732c19937ab2051a38b292">
+        revision="25.0.2"
+        sha1="247e9bc5144170ee1133f23a3e3e6f04b4bf570f">
         <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c106be552e75a177934faf507750caa99f4f89e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.1\jars\classes.jar"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="22.0.1"
-        sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
-        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-22.2.1_fbbb11ed181a57f9e886e6f73377e3f6af5a84b2\classes.dex" />
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.0_bd5f6bb26214eb36cac2ca0e941eb43bde12a859\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.0_62699aa9ac50dd23ac3ea19914afa20b84de6f40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_f2109dcf791f379e7836773364005eacf0170677\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.7\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="41a4edf3c43fdbce6eba27da50b17ff9933987f1">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.pnikosis-materialish-progress-1.7_8e8e5d780b6ea30e751c522c694847bc5bac8be0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.0_a4251f174a2ec266f469ad3fd774164895d49122\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.0_bfc33e32a331c3cce5c47a5b723973c49252e4e8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2d511c53d1bbabe9b53ae5f856e03461995b2282">
+        <dex dex="C:\Users\ferid.cafer\Documents\MyProjects\Frequent-Contacts\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3c0dd4c9410734e525648751b93e07202789731b\classes.dex" />
     </item>
 
 </items>

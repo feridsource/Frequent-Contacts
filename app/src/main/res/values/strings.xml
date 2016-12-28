@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Frequent Contacts</string>
-    <string name="pref_contacts">contacts.bin</string>
+    <string name="pref_contacts">contacts.data</string>
 
     <!-- font families -->
     <string name="fontFamilyBold">sans-serif-bold</string>
@@ -21,5 +21,7 @@
     <string name="search">Search</string>
 
     <string name="emptyText">ADD CONTACTS HERE, THEN USE THE WIDGET ON YOUR HOME SCREEN&#8230;</string>
+
+    <string name="grantPermission">App needs your permission</string>
 
 </resources>

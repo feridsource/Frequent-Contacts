@@ -17,14 +17,13 @@
 package com.ferid.app.frequentcontacts.prefs;
 
 import android.content.Context;
-import android.os.Environment;
 
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -35,44 +34,56 @@ import java.util.ArrayList;
  */
 public class PrefsUtil {
 
-    private static String getPathPrefix() {
-        String path = Environment.getExternalStorageDirectory() + "/frequent_contacts_widget/";
-        // create a File object for the parent directory
-        File directory = new File(path);
-        // have the object build the directory structure, if needed.
-        directory.mkdirs();
+    /**
+     * Write contacts list
+     * @param list ArrayList<Contact>
+     */
+    public synchronized static void writeContacts(Context context, ArrayList<Contact> list) {
+        FileOutputStream outputStream = null;
 
-        return path;
-    }
-
-    public synchronized static void writeContacts(Context context, ArrayList<Contact> contactsList) {
         try {
-            String tempPath = getPathPrefix() + context.getString(R.string.pref_contacts);
-            File file = new File(tempPath);
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
-            oos.writeObject(contactsList);
-            oos.flush();
-            oos.close();
+            outputStream = context.openFileOutput(context.getString(R.string.pref_contacts),
+                    Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(outputStream);
+            oos.writeObject(list);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    public synchronized static ArrayList<Contact> readContacts(Context context) {
-        ArrayList<Contact> tempList = new ArrayList<>();
-        try {
-            String tempPath = getPathPrefix() + context.getString(R.string.pref_contacts);
-            File file = new File(tempPath);
-            if (file.exists()) {
-                ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
-                tempList = (ArrayList<Contact>) ois.readObject();
-                ois.close();
+        } finally {
+            if (outputStream != null) {
+                try {
+                    outputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
+        }
+    }
+
+    /**
+     * Read contacts list
+     * @return ArrayList<Contact>
+     */
+    public synchronized static ArrayList<Contact> readContacts(Context context) {
+        ArrayList<Contact> list = null;
+        FileInputStream fis = null;
+
+        try {
+            fis = context.openFileInput(context.getString(R.string.pref_contacts));
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            list = (ArrayList<Contact>) ois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
-        return tempList;
+        return list;
     }
 
 }

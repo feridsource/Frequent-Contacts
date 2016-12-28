@@ -2,10 +2,10 @@
 <resources>
 
     <color name="blackish">#212121</color>
-    <color name="darkGray">#727272</color>
+    <color name="darkGrey">#757575</color>
+    <color name="grey">#b6b6b6</color>
+    <color name="lightGrey">#efefef</color>
     <color name="white">#ffffff</color>
-    <color name="gray">#b6b6b6</color>
-    <color name="lightGray">#efefef</color>
 
     <!-- material colours -->
     <color name="materialIndigo">#3F51B5</color>
@@ -15,7 +15,7 @@
     <color name="colourPrimaryDark">#303F9F</color>
 
     <color name="primary_text">@color/blackish</color>
-    <color name="secondary_text">@color/darkGray</color>
-    <color name="divider_colour">@color/gray</color>
+    <color name="secondary_text">@color/darkGrey</color>
+    <color name="divider_colour">@color/grey</color>
 
 </resources>

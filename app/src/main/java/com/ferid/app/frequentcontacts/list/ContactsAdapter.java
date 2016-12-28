@@ -128,7 +128,7 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
                 context.getResources().getStringArray(R.array.process)));
         listPopupWindow.setAnchorView(anchor);
         listPopupWindow.setContentWidth(400);
-        listPopupWindow.setDropDownGravity(Gravity.LEFT);
+        listPopupWindow.setDropDownGravity(Gravity.START);
         listPopupWindow.setModal(true);
         listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
