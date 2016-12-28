@@ -36,10 +36,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
-import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class SelectNumberActivity extends AppCompatActivity {
     private ArrayList<Contact> numberList = new ArrayList<>();
     private NumberAdapter adapter;
 
-    private ProgressWheel progressWheel;
+    private ProgressBar progressBar;
 
     private ArrayList<Contact> wholeArrayList = new ArrayList<>();
 
@@ -65,11 +65,15 @@ public class SelectNumberActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_number);
 
+        //init toolbar
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+        //---
 
         ListView list = (ListView) findViewById(R.id.list);
         adapter = new NumberAdapter(this, R.layout.select_number_row, numberList);
@@ -91,7 +95,7 @@ public class SelectNumberActivity extends AppCompatActivity {
             }
         });
 
-        progressWheel = (ProgressWheel) findViewById(R.id.progressWheel);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 
         new NumberListRetriever().execute();
@@ -200,7 +204,7 @@ public class SelectNumberActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progressWheel.spin();
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -225,7 +229,7 @@ public class SelectNumberActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
 
-            if (progressWheel.isSpinning()) progressWheel.stopSpinning();
+            progressBar.setVisibility(View.GONE);
         }
     }
 

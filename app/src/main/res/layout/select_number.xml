@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:wheel="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,16 +23,15 @@
         android:layout_height="@dimen/drop_shadow_height"
         android:layout_below="@+id/toolbar"
         android:background="@drawable/drop_shadow"
-        android:alpha="0.5" />
+        android:alpha="0.5"/>
 
     <!-- Progress Bar -->
-    <com.pnikosis.materialishprogress.ProgressWheel
-        android:id="@+id/progressWheel"
+    <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        wheel:matProg_barColor="@color/colourPrimary"
-        wheel:matProg_progressIndeterminate="true" />
+        style="@style/Widget.AppCompat.ProgressBar"/>
 
 </RelativeLayout>

@@ -170,7 +170,7 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
      * @return
      */
     private Bitmap getFormattedBitmap(Bitmap bitmap) {
-        Bitmap output = null;
+        Bitmap output;
         try {
             output = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
         } catch (Exception e) {
