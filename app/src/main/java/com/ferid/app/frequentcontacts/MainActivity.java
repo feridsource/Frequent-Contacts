@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                 != PackageManager.PERMISSION_GRANTED) { //permission yet to be granted
 
             getPermissions();
-        } else { //permissions already granted
+        } else { //permission already granted
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:" + contact.getNumber()));
             startActivity(callIntent);
