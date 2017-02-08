@@ -106,7 +106,7 @@ public class SelectNumberActivity extends AppCompatActivity {
      * @return
      */
     private ArrayList<Contact> getNumbersList() {
-        ArrayList<Contact> tmpList = new ArrayList<Contact>();
+        ArrayList<Contact> tmpList = new ArrayList<>();
         Contact contact;
 
         ContentResolver cr = getContentResolver();
@@ -255,7 +255,7 @@ public class SelectNumberActivity extends AppCompatActivity {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                ArrayList<Contact> tmpList = new ArrayList<Contact>();
+                ArrayList<Contact> tmpList = new ArrayList<>();
 
                 //first, add names that start with searchText
                 for (Contact location : wholeArrayList) {

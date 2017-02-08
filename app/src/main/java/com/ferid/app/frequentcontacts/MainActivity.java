@@ -228,9 +228,16 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
      * Call the selected contact
      */
     private void callContact() {
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:" + contact.getNumber()));
-        startActivity(callIntent);
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED) { //permission yet to be granted
+
+            getPermissions();
+        } else { //permissions already granted
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:" + contact.getNumber()));
+            startActivity(callIntent);
+        }
     }
 
     /**
@@ -299,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                 Manifest.permission.CALL_PHONE)
                 != PackageManager.PERMISSION_GRANTED)) { //permissions yet to be granted
 
-            getPermissios();
+            getPermissions();
         } else { //permissions already granted
             initAfterPermissions();
         }
@@ -308,7 +315,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     /**
      * Request and get the permission for reading contacts phone calling
      */
-    private void getPermissios() {
+    private void getPermissions() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                 Manifest.permission.READ_CONTACTS)
                 || ActivityCompat.shouldShowRequestPermissionRationale(this,
