@@ -186,8 +186,7 @@ public class SelectNumberActivity extends AppCompatActivity {
                 byte[] data = cursor.getBlob(0);
                 if (data != null) {
                     //byte[] to String convertion
-                    String photo = Base64.encodeToString(data, Base64.DEFAULT);
-                    return photo;
+                    return Base64.encodeToString(data, Base64.DEFAULT);
                 }
             }
         } finally {

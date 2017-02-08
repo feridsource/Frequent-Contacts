@@ -65,8 +65,7 @@ public class FrequentContactsWidget extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         this.context = context;
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-        this.appWidgetManager = appWidgetManager;
+        this.appWidgetManager = AppWidgetManager.getInstance(context);
         remoteViews = new RemoteViews(context.getPackageName(), R.layout.frequent_contacts_widget);
         thisWidget = new ComponentName(context, FrequentContactsWidget.class);
 
