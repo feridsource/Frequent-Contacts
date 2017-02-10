@@ -54,7 +54,6 @@ import com.ferid.app.frequentcontacts.selectnumber.SelectNumberActivity;
 import com.ferid.app.frequentcontacts.widget.FrequentContactsWidget;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -230,10 +229,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     private void callContact() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.CALL_PHONE)
-                != PackageManager.PERMISSION_GRANTED) { //permission yet to be granted
+                == PackageManager.PERMISSION_GRANTED) { //if permission is already granted
 
-            getPermissions();
-        } else { //permission already granted
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:" + contact.getNumber()));
             startActivity(callIntent);
@@ -313,7 +310,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     }
 
     /**
-     * Request and get the permission for reading contacts phone calling
+     * Request and get the permission for reading contacts and phone calling
      */
     private void getPermissions() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
@@ -345,7 +342,6 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                                            String permissions[], int[] grantResults) {
 
         if (requestCode == REQUEST_PERMISSIONS) {
-            //if request is cancelled, the result arrays are empty.
             if (grantResults.length > 1
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
@@ -432,11 +428,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                     contact.setPhoto(encodedImage);
                     save_refresh();
 
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

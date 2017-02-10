@@ -16,17 +16,20 @@
 
 package com.ferid.app.frequentcontacts.selectnumber;
 
+import android.Manifest;
 import android.app.SearchManager;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -59,6 +62,7 @@ public class SelectNumberActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private ArrayList<Contact> wholeArrayList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +102,12 @@ public class SelectNumberActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
 
-        new NumberListRetriever().execute();
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_CONTACTS)
+                == PackageManager.PERMISSION_GRANTED) { //if permission is already granted
+
+            new NumberListRetriever().execute();
+        }
     }
 
     /**
