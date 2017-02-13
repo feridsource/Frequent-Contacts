@@ -17,3 +17,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 [Play Store](https://play.google.com/store/apps/details?id=com.ferid.app.frequentcontacts)
+
+# Personal and Sensitive Information
+
+This application requires READ CONTACTS permission, in order to make user select frequently used contacts from his/her contacts list.
+This application does NOT use this permission for any other use. In case of any doubt, the application's code can be checked and examined through its source code.
