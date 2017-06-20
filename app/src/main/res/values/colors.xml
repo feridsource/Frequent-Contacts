@@ -8,8 +8,8 @@
     <color name="white">#ffffff</color>
 
     <!-- theme -->
-    <color name="colourPrimary">#2196F3</color>
-    <color name="colourPrimaryDark">#1976D2</color>
+    <color name="colourPrimary">#03A9F4</color>
+    <color name="colourPrimaryDark">#0288D1</color>
 
     <color name="primary_text">@color/blackish</color>
     <color name="secondary_text">@color/darkGrey</color>
