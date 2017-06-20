@@ -163,7 +163,7 @@ public class FrequentContactsWidget extends AppWidgetProvider {
                 if (!bitmap.isRecycled()) {
                     bitmap.recycle();
                 }
-            } catch (Exception e) {	}
+            } catch (Exception ignored) {	}
         } else {
             setDefaultPhoto(componentId);
         }
@@ -207,7 +207,7 @@ public class FrequentContactsWidget extends AppWidgetProvider {
 
     /**
      * Converts image into a circular image
-     * @param scaleBitmapImage
+     * @param scaleBitmapImage Bitmap to be scaled
      * @return
      */
     public static Bitmap getRoundedShape(Bitmap scaleBitmapImage) {
@@ -220,9 +220,9 @@ public class FrequentContactsWidget extends AppWidgetProvider {
                 ((float) targetHeight - 1) / 2, (Math.min(((float) targetWidth),
                         ((float) targetHeight)) / 2), Path.Direction.CCW);
         canvas.clipPath(path);
-        Bitmap sourceBitmap = scaleBitmapImage;
-        canvas.drawBitmap(sourceBitmap, new Rect(0, 0, sourceBitmap.getWidth(),
-                sourceBitmap.getHeight()), new Rect(0, 0, targetWidth, targetHeight), null);
+
+        canvas.drawBitmap(scaleBitmapImage, new Rect(0, 0, scaleBitmapImage.getWidth(),
+                scaleBitmapImage.getHeight()), new Rect(0, 0, targetWidth, targetHeight), null);
 
         return targetBitmap;
     }
