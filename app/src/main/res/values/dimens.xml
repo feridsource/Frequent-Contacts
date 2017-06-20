@@ -11,12 +11,11 @@
     <dimen name="listview_divider_height">0.5dp</dimen>
     <dimen name="elevation">4dp</dimen>
 
-    <dimen name="NumberList_ItemHeight">48dp</dimen>
-    <dimen name="NumberList_TextSize">@dimen/text_size_medium</dimen>
-    <dimen name="NumberList_MarginHorizontal">10dp</dimen>
+    <dimen name="numbers_list_item_height">48dp</dimen>
+    <dimen name="numbers_list_text_size">@dimen/text_size_medium</dimen>
 
-    <dimen name="ContactList_ItemHeight">210dp</dimen>
-    <dimen name="ContactList_ImageHeight">110dp</dimen>
+    <dimen name="contacts_list_item_height">210dp</dimen>
+    <dimen name="contacts_list_image_height">110dp</dimen>
 
     <dimen name="drop_shadow_height">8dp</dimen>
 
