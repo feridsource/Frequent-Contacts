@@ -70,7 +70,6 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
         final ContactHolder contactHolder;
 
         if (convertView == null) {
-            // return your progress view goes here. Ensure that it has the ID
             LayoutInflater inflater = ((Activity) context).getLayoutInflater();
             convertView = inflater.inflate(layoutResID, parent, false);
             contactHolder = new ContactHolder();
@@ -160,7 +159,7 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
                 }
             } catch (Exception ignored) {	}
         } else {
-            view.setImageResource(R.drawable.photo);
+            view.setImageResource(R.drawable.ic_person);
         }
     }
 

@@ -61,6 +61,7 @@ public class SelectNumberActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
 
+    //whole number list, used for searching any contact
     private ArrayList<Contact> wholeArrayList = new ArrayList<>();
 
 
@@ -336,4 +337,5 @@ public class SelectNumberActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 }
