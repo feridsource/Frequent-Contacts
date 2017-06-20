@@ -2,17 +2,18 @@
     <integer name="maxContactSize">4</integer>
 
     <!-- text sizes -->
+    <dimen name="text_size_small">14sp</dimen>
     <dimen name="text_size_medium">18sp</dimen>
     <dimen name="text_size_large">22sp</dimen>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="default_margin">16dp</dimen>
-    <dimen name="margin_small">10dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="tiny_margin">4dp</dimen>
     <dimen name="listview_divider_height">0.5dp</dimen>
     <dimen name="elevation">4dp</dimen>
 
     <dimen name="numbers_list_item_height">48dp</dimen>
-    <dimen name="numbers_list_text_size">@dimen/text_size_medium</dimen>
 
     <dimen name="contacts_list_item_height">210dp</dimen>
     <dimen name="contacts_list_image_height">110dp</dimen>

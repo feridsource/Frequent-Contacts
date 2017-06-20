@@ -33,6 +33,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -154,7 +155,9 @@ public class SelectNumberActivity extends AppCompatActivity {
                                     contact.setName(name);
                                     contact.setNumber(phoneNumber);
 
-                                    if (!tmpList.contains(contact)) {
+                                    if (!tmpList.contains(contact)
+                                            && !TextUtils.isEmpty(contact.getNumber())) {
+
                                         tmpList.add(contact);
                                     }
                                 }
