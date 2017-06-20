@@ -24,6 +24,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.util.Base64;
 import android.view.View;
@@ -92,7 +95,8 @@ public class FrequentContactsWidget extends AppWidgetProvider {
             context.startActivity(intent);
         } else {
             for (int i = 0; i < context.getResources().getInteger(R.integer.maxContactSize); i++) {
-                final String componentId = "id/contact" + (i + 1);
+                final String imageId = "id/contact" + (i + 1);
+                final String layoutId = "id/layoutContact" + (i + 1);
 
                 if (contactsList.size() > i) {
                     Contact contact = contactsList.get(i);
@@ -100,23 +104,23 @@ public class FrequentContactsWidget extends AppWidgetProvider {
                     try {
                         if (!contact.getPhoto().equals("")) {
                             //set photo if exists
-                            setCustomPhoto(componentId, contact.getPhoto());
+                            setCustomPhoto(imageId, contact.getPhoto());
                         } else {
                             //put default photo if there is no any
-                            setDefaultPhoto(componentId);
+                            setDefaultPhoto(imageId);
                         }
 
                         //show item
-                        setVisible(componentId);
+                        setVisible(layoutId);
 
                         //call contact on click
-                        setFrequentContactClickListener(componentId, contact.getNumber());
+                        setFrequentContactClickListener(imageId, contact.getNumber());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
                     //make it invisible (gone)
-                    setInvisible(componentId);
+                    setInvisible(layoutId);
                 }
             }
 
@@ -125,7 +129,6 @@ public class FrequentContactsWidget extends AppWidgetProvider {
 
 
         appWidgetManager.updateAppWidget(thisWidget, remoteViews);
-
     }
 
     /**
@@ -149,9 +152,21 @@ public class FrequentContactsWidget extends AppWidgetProvider {
         Bitmap bitmap = BitmapFactory.decodeByteArray(contactPhoto,
                 0, contactPhoto.length);
 
-        remoteViews.setImageViewBitmap(
-                context.getResources().getIdentifier(
-                        componentId, null, context.getPackageName()), bitmap);
+        //setting the rounded-corner image to imageview
+        if (bitmap != null) {
+            remoteViews.setImageViewBitmap(
+                    context.getResources().getIdentifier(
+                            componentId, null, context.getPackageName()), getRoundedShape(bitmap));
+
+            //anti-memory leak
+            try {
+                if (!bitmap.isRecycled()) {
+                    bitmap.recycle();
+                }
+            } catch (Exception e) {	}
+        } else {
+            setDefaultPhoto(componentId);
+        }
     }
 
     /**
@@ -190,4 +205,25 @@ public class FrequentContactsWidget extends AppWidgetProvider {
                 componentId, null, context.getPackageName()), pendingIntent);
     }
 
+    /**
+     * Converts image into a circular image
+     * @param scaleBitmapImage
+     * @return
+     */
+    public static Bitmap getRoundedShape(Bitmap scaleBitmapImage) {
+        int targetWidth = 100;
+        int targetHeight = 100;
+        Bitmap targetBitmap = Bitmap.createBitmap(targetWidth, targetHeight,Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(targetBitmap);
+        Path path = new Path();
+        path.addCircle(((float) targetWidth - 1) / 2,
+                ((float) targetHeight - 1) / 2, (Math.min(((float) targetWidth),
+                        ((float) targetHeight)) / 2), Path.Direction.CCW);
+        canvas.clipPath(path);
+        Bitmap sourceBitmap = scaleBitmapImage;
+        canvas.drawBitmap(sourceBitmap, new Rect(0, 0, sourceBitmap.getWidth(),
+                sourceBitmap.getHeight()), new Rect(0, 0, targetWidth, targetHeight), null);
+
+        return targetBitmap;
+    }
 }

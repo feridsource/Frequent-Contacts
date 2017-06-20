@@ -29,7 +29,7 @@
                 android:layout_height="@dimen/ContactList_ImageHeight"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_person"
+                app:srcCompat="@drawable/ic_person"
                 android:background="@color/darkGrey"/>
 
             <TextView

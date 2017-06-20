@@ -6,40 +6,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/contact1"
+    <RelativeLayout
+        android:id="@+id/layoutContact1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/ic_person"
-        android:visibility="gone" />
+        android:visibility="gone">
 
-    <ImageView
-        android:id="@+id/contact2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/ic_person"
-        android:visibility="gone" />
+        <ImageView
+            android:id="@+id/contact1"
+            android:layout_width="@dimen/widget_photo_size"
+            android:layout_height="@dimen/widget_photo_size"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_person"/>
 
-    <ImageView
-        android:id="@+id/contact3"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/ic_person"
-        android:visibility="gone" />
+        <ImageView
+            android:layout_width="@dimen/widget_frame_size"
+            android:layout_height="@dimen/widget_frame_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle"/>
 
-    <ImageView
-        android:id="@+id/contact4"
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutContact2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/ic_person"
-        android:visibility="gone" />
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/contact2"
+            android:layout_width="@dimen/widget_photo_size"
+            android:layout_height="@dimen/widget_photo_size"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_person"/>
+
+        <ImageView
+            android:layout_width="@dimen/widget_frame_size"
+            android:layout_height="@dimen/widget_frame_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutContact3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/contact3"
+            android:layout_width="@dimen/widget_photo_size"
+            android:layout_height="@dimen/widget_photo_size"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_person"/>
+
+        <ImageView
+            android:layout_width="@dimen/widget_frame_size"
+            android:layout_height="@dimen/widget_frame_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutContact4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/contact4"
+            android:layout_width="@dimen/widget_photo_size"
+            android:layout_height="@dimen/widget_photo_size"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_person"/>
+
+        <ImageView
+            android:layout_width="@dimen/widget_frame_size"
+            android:layout_height="@dimen/widget_frame_size"
+            android:layout_centerInParent="true"
+            android:background="@drawable/circle"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

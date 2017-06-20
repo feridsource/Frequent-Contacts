@@ -137,7 +137,7 @@ public class SelectNumberActivity extends AppCompatActivity {
                             //phones
                             Cursor phones = getContentResolver().query(
                                     ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                                    new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER,
+                                    new String[]{ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER,
                                             ContactsContract.CommonDataKinds.Phone.TYPE},
                                     ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
                                     null, null);
@@ -146,7 +146,7 @@ public class SelectNumberActivity extends AppCompatActivity {
                                 while (phones.moveToNext()) {
                                     String phoneNumber = phones.getString(
                                             phones.getColumnIndex(
-                                                    ContactsContract.CommonDataKinds.Phone.NUMBER));
+                                                    ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER));
 
                                     //create a new Contact object
                                     contact = new Contact();
