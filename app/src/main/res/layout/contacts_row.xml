@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginBottom="@dimen/margin_small"
         card_view:cardCornerRadius="2dp"
-        card_view:cardElevation="2dp">
+        card_view:cardElevation="@dimen/elevation">
 
         <LinearLayout
             android:orientation="vertical"

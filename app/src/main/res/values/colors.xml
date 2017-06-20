@@ -7,12 +7,9 @@
     <color name="lightGrey">#efefef</color>
     <color name="white">#ffffff</color>
 
-    <!-- material colours -->
-    <color name="materialIndigo">#3F51B5</color>
-
     <!-- theme -->
-    <color name="colourPrimary">@color/materialIndigo</color>
-    <color name="colourPrimaryDark">#303F9F</color>
+    <color name="colourPrimary">#2196F3</color>
+    <color name="colourPrimaryDark">#1976D2</color>
 
     <color name="primary_text">@color/blackish</color>
     <color name="secondary_text">@color/darkGrey</color>

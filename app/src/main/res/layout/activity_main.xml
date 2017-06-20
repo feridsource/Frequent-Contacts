@@ -34,13 +34,6 @@
         android:numColumns="2"
         android:stretchMode="columnWidth"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/drop_shadow_height"
-        android:layout_below="@+id/toolbar"
-        android:background="@drawable/drop_shadow"
-        android:alpha="0.5" />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/actionButtonAdd"
         android:layout_width="wrap_content"
@@ -49,7 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         app:srcCompat="@drawable/ic_action_add"
-        app:elevation="4dp"
+        app:elevation="@dimen/elevation"
         app:borderWidth="0dp"
         app:fabSize="normal"
         android:visibility="gone"/>
