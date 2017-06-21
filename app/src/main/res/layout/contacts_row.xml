@@ -40,7 +40,7 @@
                 android:layout_marginLeft="@dimen/tiny_margin"
                 android:layout_marginRight="@dimen/tiny_margin"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/text_size_medium"
+                android:textSize="@dimen/text_size_small"
                 android:textColor="@color/primary_text"
                 android:fontFamily="@string/fontFamilyBold"
                 android:maxLines="1"

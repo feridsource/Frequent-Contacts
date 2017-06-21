@@ -117,6 +117,9 @@ public class SelectNumberActivity extends AppCompatActivity {
      * @return
      */
     private ArrayList<Contact> getNumbersList() {
+        //keep track of added phones in order to handle redundancy
+        ArrayList<String> addedPhoneNumbers = new ArrayList<>();
+        //contacts to be showed
         ArrayList<Contact> tmpList = new ArrayList<>();
         Contact contact;
 
@@ -138,7 +141,7 @@ public class SelectNumberActivity extends AppCompatActivity {
                             //phones
                             Cursor phones = getContentResolver().query(
                                     ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                                    new String[]{ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER,
+                                    new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER,
                                             ContactsContract.CommonDataKinds.Phone.TYPE},
                                     ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
                                     null, null);
@@ -147,18 +150,19 @@ public class SelectNumberActivity extends AppCompatActivity {
                                 while (phones.moveToNext()) {
                                     String phoneNumber = phones.getString(
                                             phones.getColumnIndex(
-                                                    ContactsContract.CommonDataKinds.Phone.NORMALIZED_NUMBER));
+                                                    ContactsContract.CommonDataKinds.Phone.NUMBER));
 
                                     //create a new Contact object
                                     contact = new Contact();
                                     contact.setId(id);
                                     contact.setName(name);
-                                    contact.setNumber(phoneNumber);
+                                    contact.setNumber(phoneNumber.replace(" ", ""));
 
-                                    if (!tmpList.contains(contact)
-                                            && !TextUtils.isEmpty(contact.getNumber())) {
+                                    if (!TextUtils.isEmpty(contact.getNumber())
+                                            && !addedPhoneNumbers.contains(contact.getNumber())) {
 
                                         tmpList.add(contact);
+                                        addedPhoneNumbers.add(contact.getNumber());
                                     }
                                 }
                                 phones.close();

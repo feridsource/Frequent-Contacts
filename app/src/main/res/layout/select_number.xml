@@ -12,8 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
-        android:paddingLeft="@dimen/default_margin"
-        android:paddingRight="@dimen/default_margin"
         android:background="@color/white"
         android:dividerHeight="@dimen/listview_divider_height"
         android:divider="@color/divider_colour"
