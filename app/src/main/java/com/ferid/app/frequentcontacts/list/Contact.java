@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Ferid Cafer
+ * Copyright (C) 2014 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,14 @@
 
 package com.ferid.app.frequentcontacts.list;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 
 /**
  * Created by ferid.cafer on 11/12/2014.
  */
-public class Contact implements Serializable {
+public class Contact implements Parcelable {
     private int id;         //ID
     private String name;    //contact's name
     private String photo;   //contact photo
@@ -65,5 +66,36 @@ public class Contact implements Serializable {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Parcelable.Creator<Contact> CREATOR
+            = new Parcelable.Creator<Contact>() {
+        public Contact createFromParcel(Parcel in) {
+            return new Contact(in);
+        }
+
+        public Contact[] newArray(int size) {
+            return new Contact[size];
+        }
+    };
+
+    private Contact(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        photo = in.readString();
+        number = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeString(photo);
+        parcel.writeString(number);
     }
 }

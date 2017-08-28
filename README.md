@@ -13,7 +13,7 @@ This application does NOT use this permission for any other use. In case of any 
 
 # Licence
 
-Copyright (C) 2016 Ferid Cafer
+Copyright (C) 2014 Ferid Cafer
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 Ferid Cafer
+ * Copyright (C) 2014 Ferid Cafer
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,7 +45,6 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
-import com.ferid.app.frequentcontacts.enums.Process;
 import com.ferid.app.frequentcontacts.interfaces.ItemClickListener;
 import com.ferid.app.frequentcontacts.list.Contact;
 import com.ferid.app.frequentcontacts.list.ContactsAdapter;
@@ -138,9 +137,9 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
         if (contactsList != null && contactsList.size() > contactPosition) {
             contact = contactsList.get(contactPosition);
 
-            if (menuItemPosition == Process.CHANGE_PHOTO.getValue()) {
+            if (menuItemPosition == 0) {
                 selectPhoto();
-            } else if (menuItemPosition == Process.DELETE_CONTACT.getValue()) {
+            } else if (menuItemPosition == 1) {
                 removeCurrentContact();
             }
         }
@@ -411,9 +410,8 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
                         srcBitmap = Bitmap.createBitmap(srcBitmap, 0, 0, srcBitmap.getWidth(),
                                 srcBitmap.getHeight(), matrix, true);
                     }
-                    //srcBitmap is ready now
 
-                    //artık encode edip gönderiyoruz
+                    //srcBitmap is ready now
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     srcBitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                     byte[] byteArray = stream.toByteArray();
@@ -436,7 +434,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             //a contact selected from the list
             if (resultCode == RESULT_OK) {
                 try {
-                    Contact contact = (Contact) data.getSerializableExtra("contact");
+                    Contact contact = data.getParcelableExtra("contact");
                     if (contact != null) {
                         contactsList.add(contact);
                         save_refresh();
