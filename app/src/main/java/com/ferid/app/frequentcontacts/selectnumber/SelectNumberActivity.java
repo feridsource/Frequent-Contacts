@@ -122,8 +122,10 @@ public class SelectNumberActivity extends AppCompatActivity {
         ArrayList<String> addedPhoneNumbers = new ArrayList<>();
         //block to show already frequent ones
         ArrayList<Contact> frequentContacts = PrefsUtil.readFrequentContacts(this);
-        for (Contact cnt : frequentContacts) {
-            addedPhoneNumbers.add(cnt.getNumber());
+        if (frequentContacts != null) {
+            for (Contact cnt : frequentContacts) {
+                addedPhoneNumbers.add(cnt.getNumber());
+            }
         }
 
         //contacts to be showed
