@@ -13,8 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/default_margin"
         android:layout_marginRight="@dimen/default_margin"
-        android:layout_marginTop="@dimen/small_margin"
-        android:layout_marginBottom="@dimen/small_margin"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="@dimen/elevation">
 

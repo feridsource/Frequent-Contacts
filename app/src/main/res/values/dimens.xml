@@ -14,8 +14,8 @@
 
     <dimen name="numbers_list_item_height">48dp</dimen>
 
-    <dimen name="contacts_list_item_height">210dp</dimen>
-    <dimen name="contacts_list_image_height">110dp</dimen>
+    <dimen name="contacts_list_item_height">256dp</dimen>
+    <dimen name="contacts_list_image_height">128dp</dimen>
 
     <dimen name="widget_photo_size">63dp</dimen>
     <dimen name="widget_frame_size">64dp</dimen>
