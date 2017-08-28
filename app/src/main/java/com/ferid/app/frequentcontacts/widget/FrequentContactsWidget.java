@@ -85,7 +85,7 @@ public class FrequentContactsWidget extends AppWidgetProvider {
      * Read frequently used contacts list
      */
     private void getContacts() {
-        ArrayList<Contact> contactsList = PrefsUtil.readContacts(context);
+        ArrayList<Contact> contactsList = PrefsUtil.readFrequentContacts(context);
 
         if (contactsList == null || contactsList.size() == 0) {
             remoteViews.setBoolean(R.id.layoutBackground, "setEnabled", false);

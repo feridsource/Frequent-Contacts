@@ -44,6 +44,7 @@ import android.widget.ProgressBar;
 
 import com.ferid.app.frequentcontacts.R;
 import com.ferid.app.frequentcontacts.list.Contact;
+import com.ferid.app.frequentcontacts.prefs.PrefsUtil;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -119,6 +120,12 @@ public class SelectNumberActivity extends AppCompatActivity {
     private ArrayList<Contact> getNumbersList() {
         //keep track of added phones in order to handle redundancy
         ArrayList<String> addedPhoneNumbers = new ArrayList<>();
+        //block to show already frequent ones
+        ArrayList<Contact> frequentContacts = PrefsUtil.readFrequentContacts(this);
+        for (Contact cnt : frequentContacts) {
+            addedPhoneNumbers.add(cnt.getNumber());
+        }
+
         //contacts to be showed
         ArrayList<Contact> tmpList = new ArrayList<>();
         Contact contact;

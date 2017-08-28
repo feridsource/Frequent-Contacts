@@ -35,10 +35,10 @@ import java.util.ArrayList;
 public class PrefsUtil {
 
     /**
-     * Write contacts list
+     * Write frequent contacts list
      * @param list ArrayList<Contact>
      */
-    public synchronized static void writeContacts(Context context, ArrayList<Contact> list) {
+    public synchronized static void writeFrequentContacts(Context context, ArrayList<Contact> list) {
         FileOutputStream outputStream = null;
 
         try {
@@ -60,10 +60,10 @@ public class PrefsUtil {
     }
 
     /**
-     * Read contacts list
+     * Read frequent contacts list
      * @return ArrayList<Contact>
      */
-    public synchronized static ArrayList<Contact> readContacts(Context context) {
+    public synchronized static ArrayList<Contact> readFrequentContacts(Context context) {
         ArrayList<Contact> list = null;
         FileInputStream fis = null;
 

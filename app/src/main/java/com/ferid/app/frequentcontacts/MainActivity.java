@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         @Override
         protected ArrayList<Contact> doInBackground(Void... params) {
-            return PrefsUtil.readContacts(context);
+            return PrefsUtil.readFrequentContacts(context);
         }
 
         @Override
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
      * Save data and refresh the list
      */
     private void save_refresh() {
-        PrefsUtil.writeContacts(context, contactsList);
+        PrefsUtil.writeFrequentContacts(context, contactsList);
         adapter.notifyDataSetChanged();
 
         updateFrequentContactsWidget();
@@ -434,7 +434,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
             //a contact selected from the list
             if (resultCode == RESULT_OK) {
                 try {
-                    Contact contact = data.getParcelableExtra("contact");
+                    Contact contact = (Contact) data.getSerializableExtra("contact");
                     if (contact != null) {
                         contactsList.add(contact);
                         save_refresh();
