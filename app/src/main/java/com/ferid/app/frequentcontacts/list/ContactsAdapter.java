@@ -28,6 +28,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.v7.widget.ListPopupWindow;
 import android.util.Base64;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -123,10 +124,13 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
     private void setListPopUpWindow(View anchor, final int contactPosition) {
         listPopupWindow.dismiss();
 
+        int width = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 150,
+                context.getResources().getDisplayMetrics());
+        
         listPopupWindow.setAdapter(new ArrayAdapter(context, android.R.layout.simple_list_item_1,
                 context.getResources().getStringArray(R.array.process)));
         listPopupWindow.setAnchorView(anchor);
-        listPopupWindow.setContentWidth(550);
+        listPopupWindow.setContentWidth(width);
         listPopupWindow.setDropDownGravity(Gravity.START);
         listPopupWindow.setModal(true);
         listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
