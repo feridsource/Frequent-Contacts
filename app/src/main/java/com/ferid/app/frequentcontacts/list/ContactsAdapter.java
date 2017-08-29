@@ -126,7 +126,7 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
         listPopupWindow.setAdapter(new ArrayAdapter(context, android.R.layout.simple_list_item_1,
                 context.getResources().getStringArray(R.array.process)));
         listPopupWindow.setAnchorView(anchor);
-        listPopupWindow.setContentWidth(400);
+        listPopupWindow.setContentWidth(550);
         listPopupWindow.setDropDownGravity(Gravity.START);
         listPopupWindow.setModal(true);
         listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
