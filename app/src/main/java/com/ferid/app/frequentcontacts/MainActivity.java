@@ -88,17 +88,17 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
         context = this;
 
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        list = (GridView) findViewById(R.id.list);
+        list = findViewById(R.id.list);
         adapter = new ContactsAdapter(context, R.layout.contacts_row, contactsList);
         list.setAdapter(adapter);
 
-        TextView emptyText = (TextView) findViewById(R.id.emptyText);
+        TextView emptyText = findViewById(R.id.emptyText);
         list.setEmptyView(emptyText);
 
-        actionButtonAdd = (FloatingActionButton) findViewById(R.id.actionButtonAdd);
+        actionButtonAdd = findViewById(R.id.actionButtonAdd);
         actionButtonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

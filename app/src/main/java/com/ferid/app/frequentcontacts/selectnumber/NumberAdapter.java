@@ -55,8 +55,8 @@ public class NumberAdapter extends ArrayAdapter<Contact> {
             convertView = inflater.inflate(layoutResID, parent, false);
             contactHolder = new ContactHolder();
 
-            contactHolder.name = (TextView) convertView.findViewById(R.id.name);
-            contactHolder.number = (TextView) convertView.findViewById(R.id.number);
+            contactHolder.name = convertView.findViewById(R.id.name);
+            contactHolder.number = convertView.findViewById(R.id.number);
 
             convertView.setTag(contactHolder);
         } else {

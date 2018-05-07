@@ -75,10 +75,10 @@ public class ContactsAdapter extends ArrayAdapter<Contact> {
             convertView = inflater.inflate(layoutResID, parent, false);
             contactHolder = new ContactHolder();
 
-            contactHolder.photo = (ImageView) convertView.findViewById(R.id.photo);
-            contactHolder.name = (TextView) convertView.findViewById(R.id.name);
-            contactHolder.number = (TextView) convertView.findViewById(R.id.number);
-            contactHolder.settings = (ImageButton) convertView.findViewById(R.id.settings);
+            contactHolder.photo = convertView.findViewById(R.id.photo);
+            contactHolder.name = convertView.findViewById(R.id.name);
+            contactHolder.number = convertView.findViewById(R.id.number);
+            contactHolder.settings = convertView.findViewById(R.id.settings);
 
             convertView.setTag(contactHolder);
         } else {

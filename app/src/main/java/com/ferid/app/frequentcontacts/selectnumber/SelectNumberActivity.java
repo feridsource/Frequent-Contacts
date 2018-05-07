@@ -73,7 +73,7 @@ public class SelectNumberActivity extends AppCompatActivity {
         setContentView(R.layout.select_number);
 
         //init toolbar
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
@@ -82,7 +82,7 @@ public class SelectNumberActivity extends AppCompatActivity {
         }
         //---
 
-        ListView list = (ListView) findViewById(R.id.list);
+        ListView list = findViewById(R.id.list);
         adapter = new NumberAdapter(this, R.layout.select_number_row, numberList);
 
         list.setAdapter(adapter);
@@ -102,7 +102,7 @@ public class SelectNumberActivity extends AppCompatActivity {
             }
         });
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar);
 
 
         if (ContextCompat.checkSelfPermission(this,
