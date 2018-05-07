@@ -28,7 +28,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -146,28 +145,6 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
     }
 
     /**
-     * Read data and refresh the list
-     */
-    private class ContactsRetriever extends AsyncTask<Void, Void, ArrayList<Contact>> {
-
-        @Override
-        protected ArrayList<Contact> doInBackground(Void... params) {
-            return PrefsUtil.readFrequentContacts(context);
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<Contact> result) {
-            if (result != null) {
-                contactsList.addAll(result);
-            } else {
-                contactsList.clear();
-            }
-
-            adapter.notifyDataSetChanged();
-        }
-    }
-
-    /**
      * Save data and refresh the list
      */
     private void save_refresh() {
@@ -281,7 +258,14 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
      * Get contacts list and show add button after permissions granted
      */
     private void initAfterPermissions() {
-        new ContactsRetriever().execute();
+        ArrayList<Contact> result = PrefsUtil.readFrequentContacts(context);
+        if (result != null) {
+            contactsList.addAll(result);
+        } else {
+            contactsList.clear();
+        }
+
+        adapter.notifyDataSetChanged();
 
         new Handler().postDelayed(new Runnable() {
             @Override
