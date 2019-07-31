@@ -44,3 +44,4 @@ Temporary Items
 .gradle/
 .idea/
 app/app.iml
+app/mapping.txt
