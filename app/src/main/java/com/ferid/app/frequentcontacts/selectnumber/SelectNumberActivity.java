@@ -344,14 +344,11 @@ public class SelectNumberActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar actions click
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                closeWindow();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            closeWindow();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 }

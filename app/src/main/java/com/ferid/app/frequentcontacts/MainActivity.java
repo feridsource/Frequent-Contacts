@@ -322,7 +322,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           String[] permissions, int[] grantResults) {
 
         if (requestCode == REQUEST_PERMISSIONS) {
             if (grantResults.length > 1
