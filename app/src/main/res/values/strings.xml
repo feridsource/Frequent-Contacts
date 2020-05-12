@@ -2,26 +2,18 @@
 <resources>
 
     <string name="app_name">Frequent Contacts</string>
-    <string name="pref_contacts">contacts.data</string>
-
-    <!-- font families -->
-    <string name="fontFamilyBold">sans-serif-bold</string>
-    <string name="fontFamilyLight">sans-serif-light</string>
-    <string name="fontFamilyCondensed">sans-serif-condensed</string>
-
 
     <string name="contacts">Contacts</string>
 
-    <string name="changePhoto">Change Photo</string>
-    <string name="deleteContact">Not Frequent</string>
-
-    <string name="maxContactsNumber">Max. 4 contacts can be added.</string>
-    <string name="ok">OK</string>
-
     <string name="search">Search</string>
 
-    <string name="emptyText">ADD CONTACTS HERE, THEN USE THE WIDGET ON YOUR HOME SCREEN&#8230;</string>
-
     <string name="grantPermission">App needs your permission</string>
+    <string name="ok">OK</string>
+
+    <!-- accessibility -->
+    <string name="contact1">First Contact</string>
+    <string name="contact2">Second Contact</string>
+    <string name="contact3">Third Contact</string>
+    <string name="contact4">Fourth Contact</string>
 
 </resources>

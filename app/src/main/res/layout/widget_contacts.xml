@@ -8,94 +8,102 @@
     android:baselineAligned="false">
 
     <RelativeLayout
-        android:id="@+id/layoutContact1"
+        android:id="@+id/rlContact1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/contact1"
+            android:id="@+id/ivContact1"
             android:layout_width="@dimen/widget_photo_size"
             android:layout_height="@dimen/widget_photo_size"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_person"/>
+            app:srcCompat="@drawable/ic_person"
+            android:contentDescription="@string/contact1"/>
 
         <ImageView
             android:layout_width="@dimen/widget_frame_size"
             android:layout_height="@dimen/widget_frame_size"
             android:layout_centerInParent="true"
-            android:background="@drawable/circle"/>
+            android:background="@drawable/photo_frame"
+            android:contentDescription="@null"/>
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/layoutContact2"
+        android:id="@+id/rlContact2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/contact2"
+            android:id="@+id/ivContact2"
             android:layout_width="@dimen/widget_photo_size"
             android:layout_height="@dimen/widget_photo_size"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_person"/>
+            app:srcCompat="@drawable/ic_person"
+            android:contentDescription="@string/contact2"/>
 
         <ImageView
             android:layout_width="@dimen/widget_frame_size"
             android:layout_height="@dimen/widget_frame_size"
             android:layout_centerInParent="true"
-            android:background="@drawable/circle"/>
+            android:background="@drawable/photo_frame"
+            android:contentDescription="@null"/>
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/layoutContact3"
+        android:id="@+id/rlContact3"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/contact3"
+            android:id="@+id/ivContact3"
             android:layout_width="@dimen/widget_photo_size"
             android:layout_height="@dimen/widget_photo_size"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_person"/>
+            app:srcCompat="@drawable/ic_person"
+            android:contentDescription="@string/contact3"/>
 
         <ImageView
             android:layout_width="@dimen/widget_frame_size"
             android:layout_height="@dimen/widget_frame_size"
             android:layout_centerInParent="true"
-            android:background="@drawable/circle"/>
+            android:background="@drawable/photo_frame"
+            android:contentDescription="@null"/>
 
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/layoutContact4"
+        android:id="@+id/rlContact4"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/contact4"
+            android:id="@+id/ivContact4"
             android:layout_width="@dimen/widget_photo_size"
             android:layout_height="@dimen/widget_photo_size"
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_person"/>
+            app:srcCompat="@drawable/ic_person"
+            android:contentDescription="@string/contact4"/>
 
         <ImageView
             android:layout_width="@dimen/widget_frame_size"
             android:layout_height="@dimen/widget_frame_size"
             android:layout_centerInParent="true"
-            android:background="@drawable/circle"/>
+            android:background="@drawable/photo_frame"
+            android:contentDescription="@null"/>
 
     </RelativeLayout>
 

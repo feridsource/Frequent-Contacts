@@ -1,50 +1,124 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/lightGrey"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
-    <TextView
-        android:id="@+id/emptyText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/default_margin"
-        android:gravity="center"
-        android:textColor="@color/secondary_text"
-        android:textSize="@dimen/text_size_large"
-        android:fontFamily="@string/fontFamilyLight"
-        android:text="@string/emptyText"/>
-
-    <GridView
-        android:id="@+id/list"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:paddingTop="@dimen/default_margin"
-        android:clipToPadding="false"
-        android:cacheColorHint="@color/white"
-        android:numColumns="2"
-        android:stretchMode="columnWidth"/>
+        android:layout_height="match_parent"
+        android:weightSum="2">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/actionButtonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@drawable/ic_action_add"
-        app:elevation="@dimen/elevation"
-        app:borderWidth="0dp"
-        app:fabSize="normal"
-        android:visibility="gone"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2">
 
-</RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_purple">
+
+                <ImageView
+                    android:id="@+id/ivContact1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/default_margin"
+                    android:layout_above="@+id/tvName1"
+                    android:src="@drawable/ic_action_add"
+                    android:contentDescription="@string/contact1"/>
+
+                <TextView
+                    android:id="@+id/tvName1"
+                    style="@style/contactStyle"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light">
+
+                <ImageView
+                    android:id="@+id/ivContact2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/default_margin"
+                    android:layout_above="@id/tvName2"
+                    android:src="@drawable/ic_action_add"
+                    android:contentDescription="@string/contact2"/>
+
+                <TextView
+                    android:id="@+id/tvName2"
+                    style="@style/contactStyle"/>
+
+            </RelativeLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_orange_light">
+
+                <ImageView
+                    android:id="@+id/ivContact3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/default_margin"
+                    android:layout_above="@id/tvName3"
+                    android:src="@drawable/ic_action_add"
+                    android:contentDescription="@string/contact3"/>
+
+                <TextView
+                    android:id="@+id/tvName3"
+                    style="@style/contactStyle"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_blue_light">
+
+                <ImageView
+                    android:id="@+id/ivContact4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/default_margin"
+                    android:layout_above="@id/tvName4"
+                    android:src="@drawable/ic_action_add"
+                    android:contentDescription="@string/contact4"/>
+
+                <TextView
+                    android:id="@+id/tvName4"
+                    style="@style/contactStyle"/>
+
+            </RelativeLayout>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

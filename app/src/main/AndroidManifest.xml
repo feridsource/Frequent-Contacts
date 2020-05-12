@@ -9,7 +9,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.MyTheme" >
+        android:theme="@style/Theme.MyTheme"
+        android:fullBackupContent="@xml/backup_rules">
 
         <activity
             android:name=".MainActivity"
@@ -32,7 +33,7 @@
             android:resizeableActivity="false"/>
 
         <receiver
-            android:name="com.ferid.app.frequentcontacts.widget.FrequentContactsWidget"
+            android:name="com.ferid.app.frequentcontacts.widget.ContactsWidget"
             android:label="@string/app_name"
             android:icon="@mipmap/ic_launcher" >
             <intent-filter>
@@ -41,7 +42,7 @@
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/frequent_contacts_widget_provider" />
+                android:resource="@xml/contacts_widget_provider" />
         </receiver>
 
     </application>

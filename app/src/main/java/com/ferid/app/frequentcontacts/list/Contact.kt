@@ -14,17 +14,13 @@
  * limitations under the License.
  */
 
-package com.ferid.app.frequentcontacts.interfaces;
+package com.ferid.app.frequentcontacts.list
 
+import java.io.Serializable
 
-/**
- * Created by ferid.cafer on 6/26/2015.
- */
-public interface ItemClickListener {
-    /**
-     * On item click
-     * @param contactPosition Position of selected contact
-     * @param menuItemPosition Position of menu item
-     */
-    void OnItemClick(int contactPosition, int menuItemPosition);
+class Contact: Serializable {
+    var id: Int = 0          //ID
+    var name: String? = ""   //contact's name
+    var photo: String? = ""  //contact's photo
+    var number: String? = "" //phone number
 }
